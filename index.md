@@ -1,11 +1,5 @@
-# LegenDUST
-Hello, welcome.
+# 머신 러닝 입문...?
 
-I'm now high school 3rd grader from S.Korea.
+일단 머신 러닝 입문과 관련된 글을 이것 저것 써 보려고 하는데...
 
-안녕하세요!
-
-고3짜리가 지금 이러고 있는게 한심한 놈입니다!
-
-## Github pages
-[matrix with step by step solution](https://dhnam.github.io/matrix-with-step-by-step/)
+뭐 어떻게든 되겠지
