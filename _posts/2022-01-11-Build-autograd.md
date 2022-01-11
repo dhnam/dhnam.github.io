@@ -5,7 +5,7 @@ category: 만들기
 ---
 
 # 서론
-![저번 글]({% post_url 2022-01-10-Autograd %})에서 Autograd에 대해서 알아봤다.
+[저번 글]({% post_url 2022-01-10-Autograd %})에서 Autograd에 대해서 알아봤다.
 
 그걸 직접 만들어 볼 수는 없을까?
 
