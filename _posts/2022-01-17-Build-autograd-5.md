@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Autograd 만들기 4"
+title: "Autograd 만들기 5"
 category: 만들기
 ---
 
