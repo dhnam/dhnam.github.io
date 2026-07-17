@@ -1,0 +1,930 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../project2_lane_seg/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>딥페이크 탐지 어플리케이션 (Deepfake Detection Service) - 남도현 포트폴리오</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deepfake-detection-service" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="남도현 포트폴리오" class="md-header__button md-logo" aria-label="남도현 포트폴리오" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            남도현 포트폴리오
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              딥페이크 탐지 어플리케이션 (Deepfake Detection Service)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="남도현 포트폴리오" class="md-nav__button md-logo" aria-label="남도현 포트폴리오" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    남도현 포트폴리오
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    남도현 | AI CV Engineer Portfolio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project1_smart_farm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    딸기 질병 객체 인식 및 진단 (Strawberry Disease Diagnosis)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project2_lane_seg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    차선 위반 차량 탐지 시스템 (Lane Violation Detection System)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    딥페이크 탐지 어플리케이션 (Deepfake Detection Service)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    딥페이크 탐지 어플리케이션 (Deepfake Detection Service)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Overview (프로젝트 개요)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Project Overview (프로젝트 개요)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 비동기 추론 아키텍처 파이프라인 (Architecture Pipeline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Repository Structure (레포지토리 구조)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-key-contributions-code-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-modern-python-tooling-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ① Modern Python Tooling: uv 워크스페이스 환경 구축
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-paper-to-code-unite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ② Paper-to-Code: UNITE 모델 직접 구현 및 수식 보완
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pytorch-lightning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ③ PyTorch Lightning 기반 학습 파이프라인 최적화
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-onnx-runtime-cuda-vram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ④ ONNX Runtime &amp; CUDA VRAM 최적화
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-troubleshooting-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Troubleshooting Stories (트러블슈팅 경험)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Troubleshooting Stories (트러블슈팅 경험)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-leakage-validation-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 [Data Leakage] Validation 성능은 비정상적으로 높은데 Test 성능은 낮은 현상
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-rebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 [Git] Rebase 중 발생한 대형 커밋 소실 복구
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Overview (프로젝트 개요)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Project Overview (프로젝트 개요)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 비동기 추론 아키텍처 파이프라인 (Architecture Pipeline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Repository Structure (레포지토리 구조)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-key-contributions-code-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-modern-python-tooling-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ① Modern Python Tooling: uv 워크스페이스 환경 구축
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-paper-to-code-unite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ② Paper-to-Code: UNITE 모델 직접 구현 및 수식 보완
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pytorch-lightning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ③ PyTorch Lightning 기반 학습 파이프라인 최적화
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-onnx-runtime-cuda-vram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ④ ONNX Runtime &amp; CUDA VRAM 최적화
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-troubleshooting-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Troubleshooting Stories (트러블슈팅 경험)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Troubleshooting Stories (트러블슈팅 경험)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-leakage-validation-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 [Data Leakage] Validation 성능은 비정상적으로 높은데 Test 성능은 낮은 현상
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-rebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 [Git] Rebase 중 발생한 대형 커밋 소실 복구
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="deepfake-detection-service">딥페이크 탐지 어플리케이션 (Deepfake Detection Service)</h1>
+<blockquote>
+<p><strong>공식 구현체가 없는 최신 논문 아키텍처를 직접 분석 및 구현하고, 고부하 AI 모델의 병목을 해결하기 위해 FastAPI와 TaskIQ 기반의 비동기 추론 파이프라인을 구축한 프로젝트입니다.</strong></p>
+</blockquote>
+<hr />
+<h2 id="1-project-overview">1. Project Overview (프로젝트 개요)</h2>
+<ul>
+<li><strong>기간</strong>: 2026.01.28 ~ 2026.02.27 (부트캠프 최종 프로젝트 | 5명)</li>
+<li><strong>역할</strong>: AI 모델 구현, 백엔드 비동기 태스크 큐 설계 및 구현, 개발 환경(<code>uv</code> 워크스페이스) 구축 및 최적화</li>
+<li><strong>핵심 기술 스택</strong>: <ul>
+<li><strong>AI &amp; Model</strong>: PyTorch, PyTorch Lightning, Transformers (SigLIP), ONNX Runtime GPU, WandB</li>
+<li><strong>Backend</strong>: FastAPI, TaskIQ, Redis, SQLModel (ORM), PostgreSQL, Boto3 (S3)</li>
+<li><strong>DevOps &amp; Tooling</strong>: uv (Workspace), Git, Docker</li>
+</ul>
+</li>
+<li><strong>Github</strong>: https://github.com/AICV-Deepfaker/deepfaker_detection</li>
+</ul>
+<h3 id="architecture-pipeline">🌐 비동기 추론 아키텍처 파이프라인 (Architecture Pipeline)</h3>
+<p>고부하 AI 모델 추론 시 서버 병목을 방지하고 사용자 경험을 극대화하기 위해 설계한 비동기 추론 아키텍처입니다.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    actor User as 사용자 (App)
+    participant API as FastAPI 백엔드
+    participant DB as PostgreSQL (SQLModel)
+    participant Broker as TaskIQ Broker (Redis)
+    participant Worker as TaskIQ Worker
+    participant S3 as AWS S3 Storage
+    participant ORT as ONNX Runtime (GPU)
+
+    User-&gt;&gt;API: 비디오 업로드 요청
+    API-&gt;&gt;S3: 비디오 파일 업로드
+    S3--&gt;&gt;API: S3 파일 경로 반환
+    API-&gt;&gt;DB: 비디오 메타데이터 저장 (상태: PENDING)
+    API-&gt;&gt;Broker: 비동기 추론 태스크 요청 (video_id)
+    API--&gt;&gt;User: 202 ACCEPTED 반환 (즉시 응답)
+
+    Note over Worker, ORT: 백그라운드 비동기 추론 시작
+    Broker-&gt;&gt;Worker: 태스크 할당 (predict_deepfake_fast)
+    Worker-&gt;&gt;DB: 비디오 상태 업데이트 (PROCESSING)
+    Worker-&gt;&gt;S3: S3에서 비디오 다운로드 (임시 디렉토리)
+    Worker-&gt;&gt;ORT: 비디오 프레임 추출 및 ONNX 추론 실행
+    ORT--&gt;&gt;Worker: 탐지 확률 반환 (REAL/FAKE)
+    Worker-&gt;&gt;DB: 추론 결과 및 리포트 저장 (상태: COMPLETED)
+    Worker-&gt;&gt;Broker: Redis Pub/Sub 채널로 완료 알림 발행
+    Broker--&gt;&gt;User: 실시간 푸시 알림 (추론 완료 및 결과 조회 가능)</code></pre>
+<hr />
+<h2 id="2-repository-structure">2. Repository Structure (레포지토리 구조)</h2>
+<p>직접 설계하고 구축한 모노레포 워크스페이스 구조와 핵심 기여 모듈(★)입니다.</p>
+<div class="highlight"><pre><span></span><code>deepfaker_detection/ (★ uv 워크스페이스 모노레포)
+├── pyproject.toml          # ★ uv 워크스페이스 및 공통 의존성 설정
+├── uv.lock                 # ★ 전체 워크스페이스 통합 락 파일
+├── ddp_backend/            # ★ FastAPI 백엔드 서비스
+│   ├── core/
+│   │   ├── database.py     # SQLModel DB 세션 및 커넥션 풀 설정
+│   │   ├── tk_broker.py    # TaskIQ Redis 브로커 설정
+│   │   └── s3.py           # Boto3 기반 S3 업로드/다운로드 유틸리티
+│   ├── detectors/          # ★ AI 추론 엔진 래퍼
+│   │   └── visual/
+│   │       ├── base.py     # ★ BaseVideoDetector 추상 클래스
+│   │       └── unite.py    # ★ UNITE ONNX 추론 및 CUDA VRAM 최적화 구현
+│   ├── models/             # ★ SQLModel 기반 DB 테이블 정의
+│   │   ├── models.py       # Result, FastReport, DeepReport 테이블
+│   │   └── user.py         # User 테이블 및 OAuth2 스키마
+│   ├── routers/            # ★ FastAPI API 엔드포인트
+│   │   └── detection.py    # ★ 비동기 태스크 트리거 및 다형성 리포트 응답 라우터
+│   └── task/               # ★ TaskIQ 비동기 작업 정의
+│       └── detection.py    # ★ 비동기 추론 태스크 (S3 다운로드 -&gt; 추론 -&gt; DB 저장)
+└── unite_detection/        # ★ [Submodule] UNITE 모델 학습 및 ONNX 내보내기 엔진
+    ├── pyproject.toml      # ★ CPU/GPU/Flash-Attn 환경 분기 및 의존성 설정
+    └── src/unite_detection/
+        ├── dataset/        # ★ Celeb-DF, SAIL-VOS 등 커스텀 데이터셋 로더
+        ├── lit_modules/    # ★ PyTorch Lightning 모듈 및 콜백
+        │   ├── datamodule.py
+        │   ├── unite_classifier.py  # ★ LightningModule (체크포인트 경량화 포함)
+        │   └── visualization_callback.py # ★ W&amp;B 연동 자동 시각화 콜백
+        ├── losses/         # ★ 커스텀 손실 함수
+        │   └── ad_loss.py  # ★ 논문 구현체 보완 (Differentiable AD Loss)
+        ├── models/         # ★ 신경망 아키텍처 구현
+        │   ├── unite_model.py # ★ UNITE 메인 모델 (SigLIP + Temporal ViT)
+        │   └── vit_encoder.py # ★ Temporal ViT Encoder
+        └── train.py        # 학습 엔트리포인트
+</code></pre></div>
+<hr />
+<h2 id="3-key-contributions-code-highlights">3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)</h2>
+<h3 id="1-modern-python-tooling-uv">① Modern Python Tooling: <code>uv</code> 워크스페이스 환경 구축</h3>
+<ul>
+<li><strong>도전 과제</strong>: 로컬 개발 환경(Mac/Windows)과 학습 서버(Linux GPU) 간의 PyTorch CUDA 버전 및 <code>flash-attn</code> 빌드 의존성 충돌로 인해 환경 구축 시 잦은 오류 발생.</li>
+<li><strong>해결 방안</strong>: 현대적인 Python 패키지 매니저인 <code>uv</code> 워크스페이스를 도입하여 모노레포 내의 여러 패키지를 통합 관리하고, 환경별 의존성을 명확히 분리.</li>
+<li><strong>코드 하이라이트 (<code>pyproject.toml</code> - 루트)</strong>:
+    <div class="highlight"><pre><span></span><code><span class="k">[tool.uv]</span>
+<span class="c1"># flash-attn 빌드 시 PyTorch가 격리되지 않고 먼저 참조되도록 설정 (빌드 실패 방지)</span>
+<span class="n">build-constraint-dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&lt;82.0.0&quot;</span><span class="p">]</span>
+<span class="n">no-build-isolation-package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;flash-attn&quot;</span><span class="p">]</span>
+<span class="n">override-dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;torch&gt;=2.10.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;torchvision&gt;=0.25.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;torchcodec==0.10.0&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">[tool.uv.workspace]</span>
+<span class="n">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Wavelet-CLIP&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ddp_backend&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;unite_detection&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;STT&quot;</span><span class="p">]</span>
+
+<span class="k">[tool.uv.sources]</span>
+<span class="c1"># Linux 환경에서만 PyTorch CUDA 12.8 인덱스를 타겟팅하도록 설정</span>
+<span class="n">torch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;pytorch-cu128&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;sys_platform == &#39;linux&#39;&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">]</span>
+<span class="n">torchvision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;pytorch-cu128&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;sys_platform == &#39;linux&#39;&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">]</span>
+<span class="n">unite-detection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">workspace</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">editable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<h3 id="2-paper-to-code-unite">② Paper-to-Code: UNITE 모델 직접 구현 및 수식 보완</h3>
+<ul>
+<li><strong>도전 과제</strong>: 공식 코드가 없는 최신 논문(UNITE)을 분석하여 모델을 직접 구현해야 했음. 특히 논문의 핵심인 <strong>Attention-based Anomaly Detection Loss (ADLoss)</strong> 수식 중 클래스 센터 $C$가 연산 그래프에서 분리(<code>detached</code>)되어 있어 PyTorch에서 역전파(Backpropagation)가 불가능한 수학적 한계 발견.</li>
+<li><strong>해결 방안</strong>: <ul>
+<li>SigLIP 이미지 인코더를 Frozen 백본으로 두고, 프레임 간 관계를 학습하는 <strong>Temporal Positional Encoding</strong> 및 <strong>Temporal ViT Encoder</strong>를 직접 설계.</li>
+<li><code>ad_loss.py</code>에서 역전파가 불가능한 센터 $C$ 대신, 미분 가능한 배치 클래스 평균 $P$를 사용하여 클래스 간 손실(Between-class loss)을 계산하도록 수식을 보완하여 학습이 정상적으로 진행되도록 개선.</li>
+</ul>
+</li>
+<li><strong>코드 하이라이트 (<code>unite_detection/src/unite_detection/losses/ad_loss.py</code>)</strong>:
+    <div class="highlight"><pre><span></span><code><span class="c1"># 1. 센터 업데이트 (현재 배치 정보를 활용해 이동 평균 업데이트 - Gradient 분리)</span>
+<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">training</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">arch</span><span class="o">.</span><span class="n">num_cls</span><span class="p">):</span>
+        <span class="n">mask</span><span class="p">:</span> <span class="n">Bool</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;batch&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span> <span class="o">==</span> <span class="n">c</span>
+        <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+            <span class="n">valid_cls</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">batch_class_mean</span><span class="p">:</span> <span class="n">Float</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;head frame&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">P_norm</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+                <span class="c1"># C[c]는 역전파가 되지 않는 버퍼로 업데이트</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">eta</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">eta</span> <span class="o">*</span> <span class="n">batch_class_mean</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+
+            <span class="c1"># [수식 보완] 논문에서는 C와 C 사이의 거리를 계산하라고 되어 있으나,</span>
+            <span class="c1"># C는 gradient가 흐르지 않으므로 미분 가능한 batch_class_mean(P)을 사용하여 Loss 계산!</span>
+            <span class="n">dist_matrix</span><span class="p">:</span> <span class="n">Float</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;head head&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cdist</span><span class="p">(</span><span class="n">batch_class_mean</span><span class="p">,</span> <span class="n">batch_class_mean</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="c1"># ... 이후 loss_between 계산 진행</span>
+</code></pre></div></li>
+</ul>
+<h3 id="3-pytorch-lightning">③ PyTorch Lightning 기반 학습 파이프라인 최적화</h3>
+<ul>
+<li><strong>도전 과제</strong>: 대용량 Frozen 백본(SigLIP)이 체크포인트마다 중복 저장되어 디스크 공간을 기가바이트 단위로 낭비하고, 체크포인트 저장 속도가 매우 느려짐.</li>
+<li><strong>해결 방안</strong>: <code>on_save_checkpoint</code>를 오버라이드하여 학습 대상이 아닌 Frozen 파라미터(<code>vis_encoder</code>)를 체크포인트 저장 대상에서 제외하는 최적화 적용.</li>
+<li><strong>코드 하이라이트 (<code>unite_detection/src/unite_detection/lit_modules/unite_classifier.py</code>)</strong>:
+    <div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">on_save_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">checkpoint</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;체크포인트 저장 시 Frozen 파라미터(Backbone)를 제외하여 용량을 획기적으로 줄입니다.&quot;&quot;&quot;</span>
+    <span class="n">state_dict</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s2">&quot;state_dict&quot;</span><span class="p">]</span>
+
+    <span class="c1"># 저장하지 않을 키 필터링 (vis_encoder 관련 키들 제거)</span>
+    <span class="n">keys_to_remove</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">state_dict</span> <span class="k">if</span> <span class="s2">&quot;model.vis_encoder&quot;</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys_to_remove</span><span class="p">:</span>
+        <span class="k">del</span> <span class="n">state_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Optimizer] Removed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">keys_to_remove</span><span class="p">)</span><span class="si">}</span><span class="s2"> frozen backbone keys from checkpoint.&quot;</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<h3 id="4-onnx-runtime-cuda-vram">④ ONNX Runtime &amp; CUDA VRAM 최적화</h3>
+<ul>
+<li><strong>도전 과제</strong>: GPU 서버에서 다중 비동기 추론 세션 실행 시 CUDA 메모리 단편화(Fragmentation)로 인해 VRAM 여유가 있음에도 <code>cublasCreate</code> 실패 및 서버 크래시 발생.</li>
+<li><strong>해결 방안</strong>: ONNX Runtime의 세션 옵션 및 CUDA Execution Provider 설정을 정밀하게 튜닝하고, 추론 직전 PyTorch 캐시를 강제로 비우는 방어적 코드 작성.</li>
+<li><strong>코드 하이라이트 (<code>ddp_backend/detectors/visual/unite.py</code>)</strong>:
+    <div class="highlight"><pre><span></span><code><span class="nd">@override</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+    <span class="n">sess_options</span> <span class="o">=</span> <span class="n">ort</span><span class="o">.</span><span class="n">SessionOptions</span><span class="p">()</span>
+    <span class="n">sess_options</span><span class="o">.</span><span class="n">enable_mem_pattern</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">sess_options</span><span class="o">.</span><span class="n">enable_cpu_mem_arena</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">ort</span><span class="o">.</span><span class="n">get_device</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;GPU&quot;</span><span class="p">:</span>
+        <span class="n">cuda_provider_options</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;device_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;arena_extend_strategy&quot;</span><span class="p">:</span> <span class="s2">&quot;kSameAsRequested&quot;</span><span class="p">,</span> <span class="c1"># 필요한 만큼만 VRAM 할당 (기본값은 큰 블록 선점)</span>
+            <span class="s2">&quot;initial_chunk_size_bytes&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span>   <span class="c1"># 초기 아레나 크기를 1MB로 최소화해 cublasCreate 실패 방지</span>
+            <span class="s2">&quot;gpu_mem_limit&quot;</span><span class="p">:</span> <span class="mi">14</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span>      <span class="c1"># ORT가 사용 가능한 최대 VRAM 제한 (14 GB)</span>
+            <span class="s2">&quot;cudnn_conv_algo_search&quot;</span><span class="p">:</span> <span class="s2">&quot;DEFAULT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;do_copy_in_default_stream&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="c1"># PyTorch 캐시 해제 후 ORT 세션 초기화 (단편화된 VRAM 확보)</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
+        <span class="n">providers</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;CUDAExecutionProvider&quot;</span><span class="p">,</span> <span class="n">cuda_provider_options</span><span class="p">),</span> <span class="s2">&quot;CPUExecutionProvider&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">providers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CPUExecutionProvider&quot;</span><span class="p">]</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">ort</span><span class="o">.</span><span class="n">InferenceSession</span><span class="p">(</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">model_path</span><span class="p">,</span>
+        <span class="n">sess_options</span><span class="o">=</span><span class="n">sess_options</span><span class="p">,</span>
+        <span class="n">providers</span><span class="o">=</span><span class="n">providers</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<hr />
+<h2 id="4-troubleshooting-stories">4. Troubleshooting Stories (트러블슈팅 경험)</h2>
+<h3 id="data-leakage-validation-test">🚨 [Data Leakage] Validation 성능은 비정상적으로 높은데 Test 성능은 낮은 현상</h3>
+<ul>
+<li><strong>문제 현상</strong>: 모델 학습 시 Validation Accuracy가 98% 이상으로 비정상적으로 높게 나왔으나, 실제 Test 데이터셋에서는 성능이 70% 수준으로 급격히 하락하는 과적합/일반화 실패 현상 발생.</li>
+<li><strong>원인 분석</strong>: <ul>
+<li>데이터셋을 Train/Validation으로 나눌 때 무작위(Random Split)로 분할함.</li>
+<li>그러나 비디오 데이터 특성상 하나의 영상에서 여러 프레임(32프레임 단위)을 추출하여 학습 데이터로 사용하기 때문에, 영상 단위로 분할하지 않으면 <strong>동일한 비디오에서 나온 매우 유사한 프레임들이 Train과 Validation에 동시에 들어가게 되는 데이터 누수(Data Leakage)</strong>가 발생함이 원인이었음.</li>
+</ul>
+</li>
+<li><strong>해결 방안</strong>: 데이터셋 분할 방식을 프레임 레벨 무작위 분할에서 <strong>비디오 ID 기준 그룹 분할(Video-level Split)</strong>로 전면 수정함. 수정 후 Validation 지표가 Test 지표와 유사한 수준(약 82%)으로 조정되었으며, 데이터 누수 없는 신뢰할 수 있는 평가 파이프라인을 확보함.</li>
+</ul>
+<h3 id="git-rebase">🚨 [Git] Rebase 중 발생한 대형 커밋 소실 복구</h3>
+<ul>
+<li><strong>문제 현상</strong>: 충돌(Conflict)이 발생한 브랜치를 Rebase하는 도중, 실수로 하루 동안 작업한 대규모 커밋이 날아가 버리는 상황 발생.</li>
+<li><strong>해결 방안</strong>: Git의 커밋 이력 추적 도구인 <code>git reflog</code>를 실행하여 잃어버린 커밋의 해시값을 찾아내고, <code>git reset --hard</code>로 헤드를 복구한 뒤, 충돌이 발생한 커밋을 체리피킹(<code>git cherry-pick</code>)하여 안전하게 작업을 복구함. 이 경험을 통해 Git의 내부 동작 원리와 복구 메커니즘을 깊이 이해하게 됨.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

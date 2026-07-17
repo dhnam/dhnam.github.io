@@ -1,0 +1,836 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../project1_smart_farm/">
+      
+      
+        <link rel="next" href="../project3_deepfaker/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>차선 위반 차량 탐지 시스템 (Lane Violation Detection System) - 남도현 포트폴리오</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lane-violation-detection-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="남도현 포트폴리오" class="md-header__button md-logo" aria-label="남도현 포트폴리오" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            남도현 포트폴리오
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              차선 위반 차량 탐지 시스템 (Lane Violation Detection System)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="남도현 포트폴리오" class="md-nav__button md-logo" aria-label="남도현 포트폴리오" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    남도현 포트폴리오
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    남도현 | AI CV Engineer Portfolio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project1_smart_farm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    딸기 질병 객체 인식 및 진단 (Strawberry Disease Diagnosis)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    차선 위반 차량 탐지 시스템 (Lane Violation Detection System)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    차선 위반 차량 탐지 시스템 (Lane Violation Detection System)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Overview (프로젝트 개요)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Project Overview (프로젝트 개요)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-stage-pipeline-architecture-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 2-Stage Pipeline 아키텍처 (Architecture Pipeline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Repository Structure (레포지토리 구조)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-key-contributions-code-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pytorch-lightning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ① PyTorch Lightning 기반 세그멘테이션 학습 파이프라인 구축
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mask-iou" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ② 배치 단위 Mask IoU 평가 알고리즘 구현
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-troubleshooting-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Troubleshooting Stories (트러블슈팅 경험)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Troubleshooting Stories (트러블슈팅 경험)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-351-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 [Architecture] 극심한 클래스 불균형(35:1)으로 인한 단일 Detection 모델 학습 불가 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-yolo-npy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 [Data] YOLO의 다채널 .npy 입력 미지원 한계 극복
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project3_deepfaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    딥페이크 탐지 어플리케이션 (Deepfake Detection Service)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Overview (프로젝트 개요)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Project Overview (프로젝트 개요)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-stage-pipeline-architecture-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 2-Stage Pipeline 아키텍처 (Architecture Pipeline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-repository-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Repository Structure (레포지토리 구조)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-key-contributions-code-highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pytorch-lightning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ① PyTorch Lightning 기반 세그멘테이션 학습 파이프라인 구축
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mask-iou" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ② 배치 단위 Mask IoU 평가 알고리즘 구현
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-troubleshooting-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Troubleshooting Stories (트러블슈팅 경험)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Troubleshooting Stories (트러블슈팅 경험)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architecture-351-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 [Architecture] 극심한 클래스 불균형(35:1)으로 인한 단일 Detection 모델 학습 불가 문제
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-yolo-npy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 [Data] YOLO의 다채널 .npy 입력 미지원 한계 극복
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lane-violation-detection-system">차선 위반 차량 탐지 시스템 (Lane Violation Detection System)</h1>
+<blockquote>
+<p><strong>정상 차량 대비 위반 차량의 비율이 35:1에 달하는 극심한 클래스 불균형 상황에서, 객체 인식 문제를 '위치 탐지'와 '위반 분류'로 분리한 2-Stage 파이프라인으로 재정의하여 문제를 해결한 프로젝트입니다.</strong></p>
+</blockquote>
+<hr />
+<h2 id="1-project-overview">1. Project Overview (프로젝트 개요)</h2>
+<ul>
+<li><strong>기간</strong>: 2026.01.16 ~ 2026.01.23 (부트캠프 프로젝트 | 4명)</li>
+<li><strong>역할</strong>: 아키텍처 설계, PyTorch Lightning 기반 차선 세그멘테이션 모델 학습 파이프라인 구축, 평가 알고리즘 구현</li>
+<li><strong>핵심 기술 스택</strong>: <ul>
+<li><strong>AI &amp; Model</strong>: YOLOv26-seg, ResNet, Segmentation Models PyTorch (SMP), PyTorch Lightning, Albumentations</li>
+<li><strong>Serving &amp; UI</strong>: Streamlit, OpenCV, NumPy, Pandas</li>
+<li><strong>Data Format</strong>: Multi-channel TIFF (13 channels)</li>
+</ul>
+</li>
+<li><strong>Github</strong>: https://github.com/Likelion-LaneSeg/LaneSeg</li>
+</ul>
+<h3 id="2-stage-pipeline-architecture-pipeline">🌐 2-Stage Pipeline 아키텍처 (Architecture Pipeline)</h3>
+<p>극심한 클래스 불균형과 라벨 부족 문제를 해결하기 위해 설계한 2-Stage 파이프라인입니다.</p>
+<pre class="mermaid"><code>graph TD
+    Input[입력 이미지] --&gt; Stage1[Stage 1: 위치 탐지 및 마스크 추출 &lt;br&gt; YOLOv26-seg]
+    Stage1 --&gt; LaneMask[차선 세그멘테이션 마스크]
+    Stage1 --&gt; CarMask[개별 차량 세그멘테이션 마스크]
+
+    LaneMask --&gt; Merge[13채널 TIFF 이미지 생성 &lt;br&gt; 차선 정보 + 개별 차량 마스크]
+    CarMask --&gt; Merge
+
+    Merge --&gt; Stage2[Stage 2: 위반 여부 판단 &lt;br&gt; ResNet Classifier]
+    Stage2 --&gt; Output[최종 결과: 정상 / 주정차위반 / 차선위반]
+
+    style Stage1 fill:#f9f,stroke:#333,stroke-width:2px
+    style Stage2 fill:#bbf,stroke:#333,stroke-width:2px</code></pre>
+<hr />
+<h2 id="2-repository-structure">2. Repository Structure (레포지토리 구조)</h2>
+<p>작업한 공간(<code>남도현/</code>★)과 핵심 기여 모듈입니다.</p>
+<div class="highlight"><pre><span></span><code>LaneSeg/
+├── requirements.txt
+├── 남도현/              # ★ 작업 공간 (Jupyter Notebooks)
+│   ├── laneseg_lightning.ipynb  # ★ PyTorch Lightning 기반 세그멘테이션 학습 파이프라인
+│   └── lane_segmentation_determine.ipynb # ★ 위반 판단 알고리즘 및 평가 로직 구현
+└── src/                 # 공통 소스 코드
+    ├── config/          # 하이퍼파라미터 및 경로 설정
+    └── models/          # 추론용 모델 가중치 파일
+</code></pre></div>
+<hr />
+<h2 id="3-key-contributions-code-highlights">3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)</h2>
+<h3 id="1-pytorch-lightning">① PyTorch Lightning 기반 세그멘테이션 학습 파이프라인 구축</h3>
+<ul>
+<li><strong>도전 과제</strong>: 기존의 보일러플레이트 코드가 많고 구조화되지 않은 PyTorch 학습 코드는 실험 속도를 저하시키고 유지보수를 어렵게 만듦.</li>
+<li><strong>해결 방안</strong>: <code>PyTorch Lightning</code>을 도입하여 데이터셋 로딩, 데이터 증강(Albumentations), 모델 정의, 학습 루프를 완벽히 구조화.</li>
+<li><strong>코드 하이라이트 (<code>남도현/laneseg_lightning.ipynb</code>)</strong>:
+    <div class="highlight"><pre><span></span><code><span class="c1"># 1. 커스텀 데이터셋 정의 (Albumentations 연동)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LaneDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transform</span><span class="p">:</span> <span class="n">A</span><span class="o">.</span><span class="n">Compose</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">masks</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="c1"># 이미지 및 마스크 경로 수집 및 로드 로직...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">images</span><span class="p">[</span><span class="n">idx</span><span class="p">]))</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">masks</span><span class="p">[</span><span class="n">idx</span><span class="p">]))</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">:</span>
+            <span class="n">augmented</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">augmented</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">augmented</span><span class="p">[</span><span class="s1">&#39;mask&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">image</span><span class="p">,</span> <span class="n">mask</span>
+
+<span class="c1"># 2. LightningDataModule 구현 (데이터 분할 및 로더 구조화)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LaneDataModule</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">LightningDataModule</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">num_worker</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_worker</span> <span class="o">=</span> <span class="n">num_worker</span>
+        <span class="c1"># Train/Val Augmentation 정의...</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stage</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_dataset</span> <span class="o">=</span> <span class="n">LaneDataset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_transform</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">val_dataset</span> <span class="o">=</span> <span class="n">LaneDataset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">val_transform</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s1">&#39;val&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">train_dataloader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">DataLoader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">num_worker</span><span class="p">)</span>
+
+<span class="c1"># 3. LightningModule 구현 (U-Net 학습 루프 정의)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LitUnet</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">LightningModule</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">classes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">NUM_CLASSES</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">Unet</span><span class="p">(</span><span class="n">encoder_name</span><span class="o">=</span><span class="s2">&quot;resnet34&quot;</span><span class="p">,</span> <span class="n">encoder_weights</span><span class="o">=</span><span class="s2">&quot;imagenet&quot;</span><span class="p">,</span> <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">smp</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">DiceLoss</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;multiclass&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">training_step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">batch_idx</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">batch</span>
+        <span class="n">y_hat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss_fn</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">long</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;train_loss&quot;</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">prog_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">loss</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">configure_optimizers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<h3 id="2-mask-iou">② 배치 단위 Mask IoU 평가 알고리즘 구현</h3>
+<ul>
+<li><strong>도전 과제</strong>: 세그멘테이션 예측 마스크의 정확도를 정량적으로 평가하기 위해, 개별 픽셀 단위가 아닌 객체(Mask) 단위의 IoU(Intersection over Union)를 효율적으로 계산해야 했음.</li>
+<li><strong>해결 방안</strong>: NumPy 브로드캐스팅을 활용하여 배치 단위로 그라운드 트루스(GT) 마스크와 예측 마스크 간의 IoU를 고속으로 계산하는 알고리즘 구현.</li>
+<li><strong>코드 하이라이트 (<code>남도현/lane_segmentation_determine.ipynb</code>)</strong>:
+    <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">batch_mask_iou_batch</span><span class="p">(</span><span class="n">gt_batch</span><span class="p">,</span> <span class="n">pred_batch</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    gt_batch:   (B, N, H, W) - Ground Truth 마스크 배치</span>
+<span class="sd">    pred_batch: (B, M, H, W) - 예측 마스크 배치</span>
+<span class="sd">    반환값:      (B, N, M) - 각 배치 내 GT 마스크와 예측 마스크 간의 IoU 행렬</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">B</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">W</span> <span class="o">=</span> <span class="n">gt_batch</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pred_batch</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="c1"># 1차원 평탄화 후 논리 연산을 위해 boolean 타입 변환</span>
+    <span class="n">gt_flat</span> <span class="o">=</span> <span class="n">gt_batch</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>      <span class="c1"># (B, N, H*W)</span>
+    <span class="n">pred_flat</span> <span class="o">=</span> <span class="n">pred_batch</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>  <span class="c1"># (B, M, H*W)</span>
+
+    <span class="n">iou_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">B</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+        <span class="c1"># 브로드캐스팅을 위한 차원 확장</span>
+        <span class="n">gt_b</span> <span class="o">=</span> <span class="n">gt_flat</span><span class="p">[</span><span class="n">b</span><span class="p">][:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span>     <span class="c1"># (N, 1, H*W)</span>
+        <span class="n">pred_b</span> <span class="o">=</span> <span class="n">pred_flat</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span> <span class="c1"># (1, M, H*W)</span>
+
+        <span class="n">intersection</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">gt_b</span><span class="p">,</span> <span class="n">pred_b</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># (N, M)</span>
+        <span class="n">union</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">gt_b</span><span class="p">,</span> <span class="n">pred_b</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>         <span class="c1"># (N, M)</span>
+
+        <span class="c1"># 0 나누기 방지 처리</span>
+        <span class="n">iou_matrix</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">intersection</span><span class="p">,</span> <span class="n">union</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">intersection</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">),</span> <span class="n">where</span><span class="o">=</span><span class="n">union</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">iou_matrix</span>
+</code></pre></div></li>
+</ul>
+<hr />
+<h2 id="4-troubleshooting-stories">4. Troubleshooting Stories (트러블슈팅 경험)</h2>
+<h3 id="architecture-351-detection">🚨 [Architecture] 극심한 클래스 불균형(35:1)으로 인한 단일 Detection 모델 학습 불가 문제</h3>
+<ul>
+<li><strong>문제 현상</strong>: 도로 이미지 상에서 대부분의 차량은 정상 주행 중이며, 위반 차량(차선 위반, 불법 주정차)은 극소수(정상:주정차위반:차선위반 = 35:1:2)에 불과함. 단일 YOLO Object Detection 모델로 학습을 시도했을 때, 위반 차량 클래스의 탐지 성능(mAP)이 거의 0에 수렴하는 심각한 클래스 불균형 문제 발생.</li>
+<li><strong>원인 분석</strong>: 다수 클래스(정상 차량)에 모델이 편향되어 위반 차량의 희소한 특징을 학습하지 못함. 또한, YOLO 자체적으로 손실 함수 가중치 조절만으로는 이 정도의 극심한 불균형을 극복하기 어려웠음.</li>
+<li><strong>해결 방안</strong>: <ul>
+<li><strong>문제 정의 변경</strong>: 객체 인식 문제를 '위치 탐지'와 '위반 분류'로 분리하는 <strong>2-Stage 파이프라인</strong>으로 전환.</li>
+<li><strong>Stage 1</strong>: YOLOv26-seg를 활용해 도로 상의 모든 차량 마스크(위치)를 클래스 구분 없이 추출.</li>
+<li><strong>Stage 2</strong>: 추출된 개별 차량 마스크와 차선 세그멘테이션 마스크를 결합하여 <strong>13채널 TIFF 이미지</strong>를 생성.</li>
+<li><strong>언더샘플링(Undersampling)</strong>: Stage 2 분류 모델 학습 시, 다수 클래스인 정상 주행 차량 데이터를 무작위로 34/35만큼 제거하여 클래스 비율을 1:1:2 수준으로 강제 조정.</li>
+<li><strong>결과</strong>: 클래스 균형이 확보된 상태에서 ResNet 분류 모델을 학습시킴으로써 위반 차량 식별 정확도를 획기적으로 개선함.</li>
+</ul>
+</li>
+</ul>
+<h3 id="data-yolo-npy">🚨 [Data] YOLO의 다채널 <code>.npy</code> 입력 미지원 한계 극복</h3>
+<ul>
+<li><strong>문제 현상</strong>: 차선 정보와 차량 마스크 등 여러 레이어의 공간 정보를 보존하기 위해 13채널의 NumPy 배열(<code>.npy</code>)을 입력으로 사용하려 했으나, YOLO 모델은 기본적으로 3채널(RGB) 이미지 포맷만 지원하여 입력 파이프라인 구축 실패.</li>
+<li><strong>해결 방안</strong>: 다채널 데이터를 무손실로 저장할 수 있으면서 표준 이미지 라이브러리(OpenCV, Pillow)로 읽을 수 있는 <strong>TIFF(Tagged Image File Format) 멀티채널 포맷</strong>을 대안으로 채택. 13채널 데이터를 TIFF 파일로 변환하여 저장하고, 이를 모델 입력으로 연결하는 파이프라인을 성공적으로 구축함.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
