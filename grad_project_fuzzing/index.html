@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../2022-04-26-Make-Diffusion-4/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../2022-04-28-Neural-process/">
+        <link rel="next" href="../project1_smart_farm/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Bayesian Neural Network - 남도현 포트폴리오</title>
+        <title>문서 기반 퍼징 가이드 추출 및 Multi-LLM Fuzzing 파이프라인 구축 (prompt_fuzz) - 남도현 포트폴리오</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#multi-llm-fuzzing-prompt_fuzz" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="남도현 포트폴리오" class="md-header__button md-logo" aria-label="남도현 포트폴리오" data-md-component="logo">
+    <a href=".." title="남도현 포트폴리오" class="md-header__button md-logo" aria-label="남도현 포트폴리오" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bayesian Neural Network
+              문서 기반 퍼징 가이드 추출 및 Multi-LLM Fuzzing 파이프라인 구축 (prompt_fuzz)
             
           </span>
         </div>
@@ -178,7 +178,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="남도현 포트폴리오" class="md-nav__button md-logo" aria-label="남도현 포트폴리오" data-md-component="logo">
+    <a href=".." title="남도현 포트폴리오" class="md-nav__button md-logo" aria-label="남도현 포트폴리오" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -196,7 +196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -220,10 +220,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../grad_project_fuzzing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    문서 기반 퍼징 가이드 추출 및 Multi-LLM Fuzzing 파이프라인 구축 (prompt_fuzz)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -239,6 +266,165 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 배경 및 문제 정의 (Problem Statement)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 배경 및 문제 정의 (Problem Statement)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cjson-libpng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 사전 실험 및 원인 분석 (cJSON &amp; libpng 실험)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-solution-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 주요 구현 및 해결 방안 (Key Solution &amp; Implementation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 주요 구현 및 해결 방안 (Key Solution &amp; Implementation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-srcrequestopenairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 문서 및 헤더 파일 자동 수집 &amp; 컨텍스트 통합 엔진 (src/request/openai.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-structured-outputs-json-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Structured Outputs (JSON Schema) 기반 정밀 퍼징 가이드 추출
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-multi-llm-srcrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Multi-LLM 표준 규격 및 비동기 파이프라인 연동 (src/request/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 퍼징 가이드 추출 및 생성 흐름도 (Data Flow)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 정량적 성과 및 실험 결과 (Experimental Results)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 정량적 성과 및 실험 결과 (Experimental Results)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-valid-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 유효 하니스(Valid Harness) 생성 수 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-branch-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 브랜치 커버리지 (Branch Coverage) 비교 결과
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 연구 인사이트 (Key Takeaways)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -250,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project1_smart_farm/" class="md-nav__link">
+      <a href="../project1_smart_farm/" class="md-nav__link">
         
   
   
@@ -277,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project2_lane_seg/" class="md-nav__link">
+      <a href="../project2_lane_seg/" class="md-nav__link">
         
   
   
@@ -304,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project3_deepfaker/" class="md-nav__link">
+      <a href="../project3_deepfaker/" class="md-nav__link">
         
   
   
@@ -328,20 +514,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -362,7 +546,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -380,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-02-welcome-to-jekyll/" class="md-nav__link">
+      <a href="../old/2022-01-02-welcome-to-jekyll/" class="md-nav__link">
         
   
   
@@ -408,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-02-%EB%A8%B8%EB%A6%BF%EB%A7%90/" class="md-nav__link">
+      <a href="../old/2022-01-02-%EB%A8%B8%EB%A6%BF%EB%A7%90/" class="md-nav__link">
         
   
   
@@ -436,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-03-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%B4%EB%9E%80/" class="md-nav__link">
+      <a href="../old/2022-01-03-%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9D%B4%EB%9E%80/" class="md-nav__link">
         
   
   
@@ -464,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-04-Gradient/" class="md-nav__link">
+      <a href="../old/2022-01-04-Gradient/" class="md-nav__link">
         
   
   
@@ -492,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-05-Optimizer-1/" class="md-nav__link">
+      <a href="../old/2022-01-05-Optimizer-1/" class="md-nav__link">
         
   
   
@@ -520,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-06-Optimizer-2/" class="md-nav__link">
+      <a href="../old/2022-01-06-Optimizer-2/" class="md-nav__link">
         
   
   
@@ -548,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-07-Optimizer-3/" class="md-nav__link">
+      <a href="../old/2022-01-07-Optimizer-3/" class="md-nav__link">
         
   
   
@@ -576,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-10-Autograd/" class="md-nav__link">
+      <a href="../old/2022-01-10-Autograd/" class="md-nav__link">
         
   
   
@@ -604,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-11-Build-autograd/" class="md-nav__link">
+      <a href="../old/2022-01-11-Build-autograd/" class="md-nav__link">
         
   
   
@@ -632,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-12-Build-autograd-2/" class="md-nav__link">
+      <a href="../old/2022-01-12-Build-autograd-2/" class="md-nav__link">
         
   
   
@@ -660,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-13-Build-autograd-3/" class="md-nav__link">
+      <a href="../old/2022-01-13-Build-autograd-3/" class="md-nav__link">
         
   
   
@@ -688,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-14-Build-autograd-4/" class="md-nav__link">
+      <a href="../old/2022-01-14-Build-autograd-4/" class="md-nav__link">
         
   
   
@@ -716,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-17-Build-autograd-5/" class="md-nav__link">
+      <a href="../old/2022-01-17-Build-autograd-5/" class="md-nav__link">
         
   
   
@@ -744,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-18-Build-autograd-6/" class="md-nav__link">
+      <a href="../old/2022-01-18-Build-autograd-6/" class="md-nav__link">
         
   
   
@@ -772,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-19-%EB%8B%A4%EB%B3%80%EC%88%98%EB%AF%B8%EB%B6%84/" class="md-nav__link">
+      <a href="../old/2022-01-19-%EB%8B%A4%EB%B3%80%EC%88%98%EB%AF%B8%EB%B6%84/" class="md-nav__link">
         
   
   
@@ -800,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-20-%EB%8B%A4%EB%B3%80%EC%88%98%EB%AF%B8%EB%B6%842/" class="md-nav__link">
+      <a href="../old/2022-01-20-%EB%8B%A4%EB%B3%80%EC%88%98%EB%AF%B8%EB%B6%842/" class="md-nav__link">
         
   
   
@@ -828,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-21-Build-autograd-7/" class="md-nav__link">
+      <a href="../old/2022-01-21-Build-autograd-7/" class="md-nav__link">
         
   
   
@@ -856,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-24-Build-autograd-8/" class="md-nav__link">
+      <a href="../old/2022-01-24-Build-autograd-8/" class="md-nav__link">
         
   
   
@@ -884,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-25-Build-autograd-9/" class="md-nav__link">
+      <a href="../old/2022-01-25-Build-autograd-9/" class="md-nav__link">
         
   
   
@@ -912,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-26-Build-autograd-10/" class="md-nav__link">
+      <a href="../old/2022-01-26-Build-autograd-10/" class="md-nav__link">
         
   
   
@@ -940,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-01-27-Build-autograd-11/" class="md-nav__link">
+      <a href="../old/2022-01-27-Build-autograd-11/" class="md-nav__link">
         
   
   
@@ -968,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-03-AlphaCode/" class="md-nav__link">
+      <a href="../old/2022-02-03-AlphaCode/" class="md-nav__link">
         
   
   
@@ -996,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-03-Make_optimizer/" class="md-nav__link">
+      <a href="../old/2022-02-03-Make_optimizer/" class="md-nav__link">
         
   
   
@@ -1024,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-04-Make-optimizer-2/" class="md-nav__link">
+      <a href="../old/2022-02-04-Make-optimizer-2/" class="md-nav__link">
         
   
   
@@ -1052,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-07-Make-optimizer-3/" class="md-nav__link">
+      <a href="../old/2022-02-07-Make-optimizer-3/" class="md-nav__link">
         
   
   
@@ -1080,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-09-Make-optimizer-4/" class="md-nav__link">
+      <a href="../old/2022-02-09-Make-optimizer-4/" class="md-nav__link">
         
   
   
@@ -1108,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-10-Make-optimizer-5/" class="md-nav__link">
+      <a href="../old/2022-02-10-Make-optimizer-5/" class="md-nav__link">
         
   
   
@@ -1136,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-11-Make-optimizer-6/" class="md-nav__link">
+      <a href="../old/2022-02-11-Make-optimizer-6/" class="md-nav__link">
         
   
   
@@ -1164,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-14-Make-optimizer-7/" class="md-nav__link">
+      <a href="../old/2022-02-14-Make-optimizer-7/" class="md-nav__link">
         
   
   
@@ -1192,7 +1376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-15-Make-optimizer-8/" class="md-nav__link">
+      <a href="../old/2022-02-15-Make-optimizer-8/" class="md-nav__link">
         
   
   
@@ -1220,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-16-Make-optimizer-9/" class="md-nav__link">
+      <a href="../old/2022-02-16-Make-optimizer-9/" class="md-nav__link">
         
   
   
@@ -1248,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-17-Rust/" class="md-nav__link">
+      <a href="../old/2022-02-17-Rust/" class="md-nav__link">
         
   
   
@@ -1276,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-18-Model/" class="md-nav__link">
+      <a href="../old/2022-02-18-Model/" class="md-nav__link">
         
   
   
@@ -1304,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-21-Model-2/" class="md-nav__link">
+      <a href="../old/2022-02-21-Model-2/" class="md-nav__link">
         
   
   
@@ -1332,7 +1516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-22-Model-3/" class="md-nav__link">
+      <a href="../old/2022-02-22-Model-3/" class="md-nav__link">
         
   
   
@@ -1360,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-23-Model-4/" class="md-nav__link">
+      <a href="../old/2022-02-23-Model-4/" class="md-nav__link">
         
   
   
@@ -1388,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-24-Model-5/" class="md-nav__link">
+      <a href="../old/2022-02-24-Model-5/" class="md-nav__link">
         
   
   
@@ -1416,7 +1600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-02-28-Model-6/" class="md-nav__link">
+      <a href="../old/2022-02-28-Model-6/" class="md-nav__link">
         
   
   
@@ -1444,7 +1628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-02-Model-7/" class="md-nav__link">
+      <a href="../old/2022-03-02-Model-7/" class="md-nav__link">
         
   
   
@@ -1472,7 +1656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-03-Model-8/" class="md-nav__link">
+      <a href="../old/2022-03-03-Model-8/" class="md-nav__link">
         
   
   
@@ -1500,7 +1684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-04-Model-9/" class="md-nav__link">
+      <a href="../old/2022-03-04-Model-9/" class="md-nav__link">
         
   
   
@@ -1528,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-07-Model-10/" class="md-nav__link">
+      <a href="../old/2022-03-07-Model-10/" class="md-nav__link">
         
   
   
@@ -1556,7 +1740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-08-Model-11/" class="md-nav__link">
+      <a href="../old/2022-03-08-Model-11/" class="md-nav__link">
         
   
   
@@ -1584,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-10-Model-12/" class="md-nav__link">
+      <a href="../old/2022-03-10-Model-12/" class="md-nav__link">
         
   
   
@@ -1612,7 +1796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-14-Infinite-width-NN/" class="md-nav__link">
+      <a href="../old/2022-03-14-Infinite-width-NN/" class="md-nav__link">
         
   
   
@@ -1640,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-15-Loss/" class="md-nav__link">
+      <a href="../old/2022-03-15-Loss/" class="md-nav__link">
         
   
   
@@ -1668,7 +1852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-16-Loss-2/" class="md-nav__link">
+      <a href="../old/2022-03-16-Loss-2/" class="md-nav__link">
         
   
   
@@ -1696,7 +1880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-17-Transformer/" class="md-nav__link">
+      <a href="../old/2022-03-17-Transformer/" class="md-nav__link">
         
   
   
@@ -1724,7 +1908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-21-Transormer-2/" class="md-nav__link">
+      <a href="../old/2022-03-21-Transormer-2/" class="md-nav__link">
         
   
   
@@ -1752,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-30-Word2Vec/" class="md-nav__link">
+      <a href="../old/2022-03-30-Word2Vec/" class="md-nav__link">
         
   
   
@@ -1780,7 +1964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-03-31-MNIST/" class="md-nav__link">
+      <a href="../old/2022-03-31-MNIST/" class="md-nav__link">
         
   
   
@@ -1808,7 +1992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-01-MNIST-2/" class="md-nav__link">
+      <a href="../old/2022-04-01-MNIST-2/" class="md-nav__link">
         
   
   
@@ -1836,7 +2020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-04-MNIST-3/" class="md-nav__link">
+      <a href="../old/2022-04-04-MNIST-3/" class="md-nav__link">
         
   
   
@@ -1864,7 +2048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-05-MNIST-4/" class="md-nav__link">
+      <a href="../old/2022-04-05-MNIST-4/" class="md-nav__link">
         
   
   
@@ -1892,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-06-MNIST-5/" class="md-nav__link">
+      <a href="../old/2022-04-06-MNIST-5/" class="md-nav__link">
         
   
   
@@ -1920,7 +2104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-07-MNIST-6/" class="md-nav__link">
+      <a href="../old/2022-04-07-MNIST-6/" class="md-nav__link">
         
   
   
@@ -1948,7 +2132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-08-MNIST-7/" class="md-nav__link">
+      <a href="../old/2022-04-08-MNIST-7/" class="md-nav__link">
         
   
   
@@ -1976,7 +2160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-11-Dall-E/" class="md-nav__link">
+      <a href="../old/2022-04-11-Dall-E/" class="md-nav__link">
         
   
   
@@ -2004,7 +2188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-12-MNIST-8/" class="md-nav__link">
+      <a href="../old/2022-04-12-MNIST-8/" class="md-nav__link">
         
   
   
@@ -2032,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-13-VAE/" class="md-nav__link">
+      <a href="../old/2022-04-13-VAE/" class="md-nav__link">
         
   
   
@@ -2060,7 +2244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-14-VAE-2/" class="md-nav__link">
+      <a href="../old/2022-04-14-VAE-2/" class="md-nav__link">
         
   
   
@@ -2088,7 +2272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-18-Diffusion-model/" class="md-nav__link">
+      <a href="../old/2022-04-18-Diffusion-model/" class="md-nav__link">
         
   
   
@@ -2116,7 +2300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-19-Gaussian-process/" class="md-nav__link">
+      <a href="../old/2022-04-19-Gaussian-process/" class="md-nav__link">
         
   
   
@@ -2144,7 +2328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-20-Make-Diffusion/" class="md-nav__link">
+      <a href="../old/2022-04-20-Make-Diffusion/" class="md-nav__link">
         
   
   
@@ -2172,7 +2356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-21-Make-Diffusion-2/" class="md-nav__link">
+      <a href="../old/2022-04-21-Make-Diffusion-2/" class="md-nav__link">
         
   
   
@@ -2200,7 +2384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-25-Make-Diffusion-3/" class="md-nav__link">
+      <a href="../old/2022-04-25-Make-Diffusion-3/" class="md-nav__link">
         
   
   
@@ -2228,7 +2412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-26-Make-Diffusion-4/" class="md-nav__link">
+      <a href="../old/2022-04-26-Make-Diffusion-4/" class="md-nav__link">
         
   
   
@@ -2253,19 +2437,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../old/2022-04-28-Bayesian-Neural-Network/" class="md-nav__link">
         
   
   
@@ -2281,7 +2456,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2294,7 +2468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-04-28-Neural-process/" class="md-nav__link">
+      <a href="../old/2022-04-28-Neural-process/" class="md-nav__link">
         
   
   
@@ -2322,7 +2496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-05-02-Make-neural-process/" class="md-nav__link">
+      <a href="../old/2022-05-02-Make-neural-process/" class="md-nav__link">
         
   
   
@@ -2350,7 +2524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-05-03-Make-neural-process-2/" class="md-nav__link">
+      <a href="../old/2022-05-03-Make-neural-process-2/" class="md-nav__link">
         
   
   
@@ -2378,7 +2552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2022-05-04-Make-neural-process-3/" class="md-nav__link">
+      <a href="../old/2022-05-04-Make-neural-process-3/" class="md-nav__link">
         
   
   
@@ -2426,6 +2600,153 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📌 배경 및 문제 정의 (Problem Statement)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 배경 및 문제 정의 (Problem Statement)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cjson-libpng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 사전 실험 및 원인 분석 (cJSON &amp; libpng 실험)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-solution-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 주요 구현 및 해결 방안 (Key Solution &amp; Implementation)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 주요 구현 및 해결 방안 (Key Solution &amp; Implementation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-srcrequestopenairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 문서 및 헤더 파일 자동 수집 &amp; 컨텍스트 통합 엔진 (src/request/openai.rs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-structured-outputs-json-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Structured Outputs (JSON Schema) 기반 정밀 퍼징 가이드 추출
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-multi-llm-srcrequest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Multi-LLM 표준 규격 및 비동기 파이프라인 연동 (src/request/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 퍼징 가이드 추출 및 생성 흐름도 (Data Flow)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 정량적 성과 및 실험 결과 (Experimental Results)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 정량적 성과 및 실험 결과 (Experimental Results)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-valid-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 유효 하니스(Valid Harness) 생성 수 비교
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-branch-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 브랜치 커버리지 (Branch Coverage) 비교 결과
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 연구 인사이트 (Key Takeaways)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2441,43 +2762,169 @@
 
 
 
-<h1 id="_1">서론</h1>
-<p>베이지언 신경망과 NNGP에 대해 더 알아보고 싶다.</p>
-<h1 id="_2">기본 컨셉</h1>
-<p>베이지언 신경망은 NN의 모든 weight가 전부 결정적인 것이 아닌 확률 분포를 따른다고 생각한다.</p>
-<p>모든 weight가 각각 정규분포를 따른다는 것이다.</p>
-<p>NNGP는 - VAE할 때 나왔던 그거다. NN의 결과로 평균과 표준편차를 계산해낸다.</p>
-<h1 id="vi-bnn">VI로 BNN</h1>
-<p><a href="http://krasserm.github.io/2019/03/14/bayesian-neural-networks/">이쪽</a>의 코드에 구현이 있다.</p>
-<p>VAE할 때 나왔던 Reparametrization trick을 매 layer마다 쓰고 있는 모양이다.</p>
-<p>각 layer의 weight와 bias가 각각 평균과 표준편차를 가지고 있고</p>
-<p>이를 Reparametrization trick을 이용해서 매 학습 때마다 추출해서 쓰는 모양이다.</p>
-<p>학습 자체는 엄청 평범하게 한 것 같다.</p>
-<h1 id="mc-dropout-bnn">MC Dropout으로 BNN</h1>
-<p>드롭아웃으로??</p>
-<p>일단 드롭아웃이라는건 굉장히 흔한 신경망 학습 기법이다. (MC는 몬테카를로의 줄임말인데... 임의로 끊는다는 뜻이다.)</p>
-<p>학습하는 동안 신경망 일부를 완전히 끊어두는 것이다. 매 학습 때마다 다른 부분을 끊는다.</p>
-<p>그렇게 하면 과적합을 막을 수 있고 기타등등 해서 좋은 결과를 낼 수 있다고 한다.</p>
-<p>당연히 학습 때 쓰는 기법이기 때문에 학습 후에는 dropout을 해제한다.</p>
-<p>그런데 <a href="https://arxiv.org/abs/1506.02142">어떤 논문</a>에서 말하길 이 Dropout을 학습 후에도 유지한다면 베이지안 신경망과 비슷한 효과를 낼 수 있다고 한다.</p>
-<p>대충 어떤 느낌인가 하면-</p>
-<p>Dropout이 켜져 있는 상태에서 모델이 확신을 가지는 부분은 어떻게 모델 중간을 날리더라도 나름 비슷비슷한 결과가 나오겠지만</p>
-<p>확실치 않은 부분에서는 Dropout을 어떻게 날리는지에 따라 나오는 값이 천차만별일 것이다.</p>
-<p>그렇기 때문에 Dropout을 켜고 여러 번 돌려본 다음 (확률적으로 다르게 나올 테니까) 나온 결과 값들을 확인해보면</p>
-<p>이 모델이 얼마나 확신을 가지는지를 알 수 있을 것이다.</p>
-<h1 id="_3">참고 사이트</h1>
-<p>링크를 건 것 외에 본문을 적을 때 참고한 사이트는 <a href="https://gaussian37.github.io/dl-concept-bayesian_neural_network/">여기</a>이다.</p>
-<h1 id="_4">다음 시간</h1>
-<p>다음엔 GPNN을 볼 생각이다.</p>
+<h1 id="multi-llm-fuzzing-prompt_fuzz">문서 기반 퍼징 가이드 추출 및 Multi-LLM Fuzzing 파이프라인 구축 (<code>prompt_fuzz</code>)</h1>
+<blockquote>
+<p><strong>C/C++ 라이브러리의 헤더 파일과 문서(README)로부터 API 제약 조건, 메모리 소유권, 보일러플레이트 가이드를 자동 추출하여 유효 Fuzz Driver 생성률과 브랜치 커버리지를 극대화한 연구 및 개발</strong></p>
+</blockquote>
+<hr />
+<h2 id="problem-statement">📌 배경 및 문제 정의 (Problem Statement)</h2>
+<p>기존 PromptFuzz 등 LLM 기반 Fuzz Driver(Harness) 자동 생성 기법은 타겟 라이브러리의 코드나 문서를 참조하지 않고 단점적인 API 시그니처 정보만 프롬프트로 제공했습니다.</p>
+<p>이로 인해 LLM이 <strong>C/C++ 라이브러리 특유의 메모리 관리 규약(Free 책임, 소유권 이전) 및 에러 핸들링 보일러플레이트</strong>를 파악하지 못해 생성된 Harness의 대다수가 컴파일 또는 실행 시 크래시되는 한계가 존재했습니다.</p>
+<h3 id="cjson-libpng">🔍 사전 실험 및 원인 분석 (cJSON &amp; libpng 실험)</h3>
+<ul>
+<li><strong>cJSON 80개 Harness 생성 실험</strong>: 80개 중 <strong>단 24개만 성공(성공률 30%)</strong>, 실패한 56개 중 <strong>LeakSanitizer(메모리 미해제) 25개, AddressSanitizer(Free 후 재사용/Use-After-Free) 22개</strong>로 메모리 관리 지식 부족이 주원인임을 입증.</li>
+<li><strong>libpng Harness 생성 실험</strong>: <code>png_jmpbuf()</code>를 이용한 에러 처리 보일러플레이트 미비로 정상종료(Halt)되지 않고 에러 크래시 발생.</li>
+<li><strong>핵심 인사이트</strong>: Harness 생성 실패의 주 원인은 <strong>API 메모리 소유권(Ownership) 및 라이브러리 고유의 Lifecycle/보일러플레이트 정보 부족</strong>에 있음.</li>
+</ul>
+<hr />
+<h2 id="key-solution-implementation">💡 주요 구현 및 해결 방안 (Key Solution &amp; Implementation)</h2>
+<h3 id="1-srcrequestopenairs">1. 문서 및 헤더 파일 자동 수집 &amp; 컨텍스트 통합 엔진 (<code>src/request/openai.rs</code>)</h3>
+<ul>
+<li>타겟 라이브러리의 시스템/라이브러리 헤더 파일(<code>include_sys_headers</code>, <code>include_lib_headers</code>)과 빌드 디렉토리 내 문서 파일(<code>README.md</code>, <code>README.txt</code>, <code>README</code>)을 자동 로드.</li>
+<li><code>--- Header File ---</code> 및 <code>--- Documentation File ---</code> 구조로 분류하여 LLM 컨텍스트로 결합.</li>
+</ul>
+<h3 id="2-structured-outputs-json-schema">2. Structured Outputs (JSON Schema) 기반 정밀 퍼징 가이드 추출</h3>
+<ul>
+<li>OpenAI의 <code>ResponseFormatJsonSchema</code> 규격을 적용하여 strict 모드의 스키마(<code>fuzzing_harness_gen</code>) 정의 및 강제 고정.</li>
+<li><strong>API 메모리 소유권 및 제약 조건 구조화</strong>:</li>
+<li><code>arg_ownership_info</code>: 인자 전달 시 소유권 유지/이전 여부 (<code>Caller keeps ownership</code>, <code>Caller loses ownership</code>, <code>None</code>)</li>
+<li><code>ret_ownership_info</code>: 반환값 해제 책임 정보 (<code>Caller owns</code>, <code>Library owns</code>, <code>None</code>)</li>
+<li><code>func_info</code>: API 호출 전 선행 조건 및 필수 사용법</li>
+<li><strong>라이브러리 보일러플레이트 가이드 추출</strong>:</li>
+<li><code>library_boilerplate</code>: 라이브러리 전용 에러 핸들링 및 필수 초기화/정리 구문 가이드 추출.</li>
+</ul>
+<h3 id="3-multi-llm-srcrequest">3. Multi-LLM 표준 규격 및 비동기 파이프라인 연동 (<code>src/request/</code>)</h3>
+<ul>
+<li><code>async-openai</code> v0.28 연동 및 환경 변수(<code>OPENAI_MODEL_NAME</code>, <code>OPENAI_PROXY_BASE</code>, <code>OPENAI_CONTEXT_LIMIT</code>) 지원으로 vLLM, Ollama, OpenAI 호환 엔드포인트 연동.</li>
+<li>Tokio Runtime 및 <code>futures::future::join_all</code> 기반 비동기 병렬 처리 및 <code>TokenUsage</code> 실시간 모니터링 로거 구현.</li>
+</ul>
+<hr />
+<h2 id="data-flow">📂 퍼징 가이드 추출 및 생성 흐름도 (Data Flow)</h2>
+<pre class="mermaid"><code>flowchart TD
+    A[C/C++ Header Files] --&gt; C[Context Aggregator &amp; Structuring]
+    B[README / Documentation Files] --&gt; C
+    C --&gt; D[OpenAI Structured Outputs&lt;br&gt;ResponseFormatJsonSchema]
+    D --&gt; E[Extracted Fuzzing Guide JSON]
+    E --&gt; F[API Ownership Info&lt;br&gt;arg/ret ownership]
+    E --&gt; G[Usage Constraints &amp;&lt;br&gt;Call Dependencies]
+    E --&gt; H[Library Boilerplate &amp;&lt;br&gt;Error Handling Guide]
+    F &amp; G &amp; H --&gt; I[System / User Prompt Injection]
+    I --&gt; J[High-Quality Fuzz Driver Generation]</code></pre>
+<hr />
+<h2 id="experimental-results">📊 정량적 성과 및 실험 결과 (Experimental Results)</h2>
+<p><strong>GPT-4o-mini</strong> 모델 환경에서 6개 주요 C/C++ 라이브러리를 대상으로 11~15시간 동안 퍼징 실험을 진행하여 기존 PromptFuzz와 비교 검증했습니다.</p>
+<h3 id="1-valid-harness">1. 유효 하니스(Valid Harness) 생성 수 비교</h3>
+<p>문서 기반 퍼징 가이드 주입을 통해 메모리 유실 및 ASan 크래시가 대폭 줄어들어 <strong>유효 하니스 생성 수가 최대 4.5배 증가</strong>했습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">라이브러리</th>
+<th style="text-align: center;">PromptFuzz 유효 하니스</th>
+<th style="text-align: center;"><strong>본 프로젝트 유효 하니스</strong></th>
+<th style="text-align: center;"><strong>증가율</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>cJSON</strong></td>
+<td style="text-align: center;">~44개</td>
+<td style="text-align: center;"><strong>~80개</strong></td>
+<td style="text-align: center;"><strong>↑ 81.8%</strong> (1.8배)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>c-ares</strong></td>
+<td style="text-align: center;">~6개</td>
+<td style="text-align: center;"><strong>~27개</strong></td>
+<td style="text-align: center;"><strong>↑ 350.0%</strong> (4.5배)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>libmagic</strong></td>
+<td style="text-align: center;">~41개</td>
+<td style="text-align: center;"><strong>~81개</strong></td>
+<td style="text-align: center;"><strong>↑ 97.6%</strong> (2.0배)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>lcms</strong></td>
+<td style="text-align: center;">~6개</td>
+<td style="text-align: center;"><strong>~19개</strong></td>
+<td style="text-align: center;"><strong>↑ 216.7%</strong> (3.2배)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>zlib</strong></td>
+<td style="text-align: center;">~19개</td>
+<td style="text-align: center;"><strong>~27개</strong></td>
+<td style="text-align: center;"><strong>↑ 42.1%</strong> (1.4배)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-branch-coverage">2. 브랜치 커버리지 (Branch Coverage) 비교 결과</h3>
+<p>유효 하니스 생성이 증가함에 따라 <strong>모든 라이브러리에서 기존 PromptFuzz 대비 브랜치 커버리지가 상승</strong>했습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">라이브러리</th>
+<th style="text-align: center;">퍼징 시간</th>
+<th style="text-align: center;">기존 PromptFuzz 커버리지</th>
+<th style="text-align: center;"><strong>본 프로젝트 커버리지</strong></th>
+<th style="text-align: center;"><strong>커버리지 상승 폭 (p)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>cJSON</strong></td>
+<td style="text-align: center;">13시간</td>
+<td style="text-align: center;">78.37%</td>
+<td style="text-align: center;"><strong>87.38%</strong></td>
+<td style="text-align: center;"><strong>↑ 9.01%p</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>libmagic</strong></td>
+<td style="text-align: center;">13시간</td>
+<td style="text-align: center;">37.62%</td>
+<td style="text-align: center;"><strong>45.40%</strong></td>
+<td style="text-align: center;"><strong>↑ 7.78%p</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>c-ares</strong></td>
+<td style="text-align: center;">15시간</td>
+<td style="text-align: center;">39.87%</td>
+<td style="text-align: center;"><strong>45.03%</strong></td>
+<td style="text-align: center;"><strong>↑ 5.16%p</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>zlib</strong></td>
+<td style="text-align: center;">11시간</td>
+<td style="text-align: center;">59.88%</td>
+<td style="text-align: center;"><strong>62.01%</strong></td>
+<td style="text-align: center;"><strong>↑ 2.13%p</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>re2</strong></td>
+<td style="text-align: center;">15시간</td>
+<td style="text-align: center;">41.96%</td>
+<td style="text-align: center;"><strong>43.16%</strong></td>
+<td style="text-align: center;"><strong>↑ 1.20%p</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>lcms</strong></td>
+<td style="text-align: center;">15시간</td>
+<td style="text-align: center;">23.01%</td>
+<td style="text-align: center;"><strong>23.38%</strong></td>
+<td style="text-align: center;"><strong>↑ 0.37%p</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-takeaways">🎯 연구 인사이트 (Key Takeaways)</h3>
+<ol>
+<li>API 문서와 헤더 파일의 메모리 관리 및 보일러플레이트 정보가 명확히 명시된 라이브러리일수록 (cJSON, libmagic, c-ares) <strong>유효 하니스 비율과 브랜치 커버리지가 비례하여 대폭 상승(최대 9.01%p)</strong>함.</li>
+<li>높은 품질의 유효 하니스가 초기에 대량 생성됨으로써 <strong>더 짧은 시간에 높은 커버리지 목표치에 도달</strong>함을 검증함.</li>
+</ol>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -2537,10 +2984,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
