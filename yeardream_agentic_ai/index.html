@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../project2_lane_seg/">
+        <link rel="prev" href="../project3_deepfaker/">
       
       
-        <link rel="next" href="../yeardream_agentic_ai/">
+        <link rel="next" href="../old/2022-01-02-welcome-to-jekyll/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>딥페이크 탐지 어플리케이션 (Deepfake Detection Service) - 남도현 포트폴리오</title>
+        <title>게임 서비스센터 Agentic AI 시스템 (YearDream_AgenticAI) - 남도현 포트폴리오</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deepfake-detection-service" class="md-skip">
+        <a href="#agentic-ai-yeardream_agenticai" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              딥페이크 탐지 어플리케이션 (Deepfake Detection Service)
+              게임 서비스센터 Agentic AI 시스템 (YearDream_AgenticAI)
             
           </span>
         </div>
@@ -301,6 +301,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../project3_deepfaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    딥페이크 탐지 어플리케이션 (Deepfake Detection Service)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -320,7 +347,7 @@
   <span class="md-ellipsis">
     
   
-    딥페이크 탐지 어플리케이션 (Deepfake Detection Service)
+    게임 서비스센터 Agentic AI 시스템 (YearDream_AgenticAI)
   
 
     
@@ -338,7 +365,7 @@
   <span class="md-ellipsis">
     
   
-    딥페이크 탐지 어플리케이션 (Deepfake Detection Service)
+    게임 서비스센터 Agentic AI 시스템 (YearDream_AgenticAI)
   
 
     
@@ -376,10 +403,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#architecture-pipeline" class="md-nav__link">
+  <a href="#human-in-the-loop-hitl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌐 비동기 추론 아키텍처 파이프라인 (Architecture Pipeline)
+        🌐 Human-In-The-Loop (HITL) 워크플로우 아키텍처
       
     </span>
   </a>
@@ -415,10 +442,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-modern-python-tooling-uv" class="md-nav__link">
+  <a href="#1-langgraph-1x-stategraph-human-in-the-loop-hitl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ① Modern Python Tooling: uv 워크스페이스 환경 구축
+        ① LangGraph 1.x 기반 StateGraph &amp; Human-In-The-Loop (HITL) 설계
       
     </span>
   </a>
@@ -426,10 +453,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-paper-to-code-unite" class="md-nav__link">
+  <a href="#2-fastapi-sse-jsonl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ② Paper-to-Code: UNITE 모델 직접 구현 및 수식 보완
+        ② FastAPI &amp; SSE / JSONL 비동기 이벤트 스트리밍 엔드포인트 구축
       
     </span>
   </a>
@@ -437,10 +464,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-pytorch-lightning" class="md-nav__link">
+  <a href="#3-llamaindex-rag-vector-store-target-user" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ③ PyTorch Lightning 기반 학습 파이프라인 최적화
+        ③ LlamaIndex 기반 RAG Vector Store 영속화 및 Target User 검증 툴 구현
       
     </span>
   </a>
@@ -448,10 +475,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-onnx-runtime-cuda-vram" class="md-nav__link">
+  <a href="#4-docker-uv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ④ ONNX Runtime &amp; CUDA VRAM 최적화
+        ④ 풀스택 연동 지원 &amp; Docker / uv 개발 환경 구축
       
     </span>
   </a>
@@ -476,21 +503,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#data-leakage-validation-test" class="md-nav__link">
+  <a href="#langgraph-1x-migration-langgraph-react-agent-stategraph" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚨 [Data Leakage] Validation 성능은 비정상적으로 높은데 Test 성능은 낮은 현상
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-rebase" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚨 [Git] Rebase 중 발생한 대형 커밋 소실 복구
+        🚨 [LangGraph 1.x Migration] LangGraph 버전 상향에 따른 ReAct Agent 생성 및 StateGraph 구축 패러다임 변화
       
     </span>
   </a>
@@ -506,33 +522,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../yeardream_agentic_ai/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    게임 서비스센터 Agentic AI 시스템 (YearDream_AgenticAI)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -2646,10 +2635,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#architecture-pipeline" class="md-nav__link">
+  <a href="#human-in-the-loop-hitl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌐 비동기 추론 아키텍처 파이프라인 (Architecture Pipeline)
+        🌐 Human-In-The-Loop (HITL) 워크플로우 아키텍처
       
     </span>
   </a>
@@ -2685,10 +2674,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-modern-python-tooling-uv" class="md-nav__link">
+  <a href="#1-langgraph-1x-stategraph-human-in-the-loop-hitl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ① Modern Python Tooling: uv 워크스페이스 환경 구축
+        ① LangGraph 1.x 기반 StateGraph &amp; Human-In-The-Loop (HITL) 설계
       
     </span>
   </a>
@@ -2696,10 +2685,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-paper-to-code-unite" class="md-nav__link">
+  <a href="#2-fastapi-sse-jsonl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ② Paper-to-Code: UNITE 모델 직접 구현 및 수식 보완
+        ② FastAPI &amp; SSE / JSONL 비동기 이벤트 스트리밍 엔드포인트 구축
       
     </span>
   </a>
@@ -2707,10 +2696,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-pytorch-lightning" class="md-nav__link">
+  <a href="#3-llamaindex-rag-vector-store-target-user" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ③ PyTorch Lightning 기반 학습 파이프라인 최적화
+        ③ LlamaIndex 기반 RAG Vector Store 영속화 및 Target User 검증 툴 구현
       
     </span>
   </a>
@@ -2718,10 +2707,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-onnx-runtime-cuda-vram" class="md-nav__link">
+  <a href="#4-docker-uv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ④ ONNX Runtime &amp; CUDA VRAM 최적화
+        ④ 풀스택 연동 지원 &amp; Docker / uv 개발 환경 구축
       
     </span>
   </a>
@@ -2746,21 +2735,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#data-leakage-validation-test" class="md-nav__link">
+  <a href="#langgraph-1x-migration-langgraph-react-agent-stategraph" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚨 [Data Leakage] Validation 성능은 비정상적으로 높은데 Test 성능은 낮은 현상
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#git-rebase" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚨 [Git] Rebase 중 발생한 대형 커밋 소실 복구
+        🚨 [LangGraph 1.x Migration] LangGraph 버전 상향에 따른 ReAct Agent 생성 및 StateGraph 구축 패러다임 변화
       
     </span>
   </a>
@@ -2789,213 +2767,176 @@
 
 
 
-<h1 id="deepfake-detection-service">딥페이크 탐지 어플리케이션 (Deepfake Detection Service)</h1>
+<h1 id="agentic-ai-yeardream_agenticai">게임 서비스센터 Agentic AI 시스템 (YearDream_AgenticAI)</h1>
 <blockquote>
-<p><strong>공식 구현체가 없는 최신 논문 아키텍처를 직접 분석 및 구현하고, 고부하 AI 모델의 병목을 해결하기 위해 FastAPI와 TaskIQ 기반의 비동기 추론 파이프라인을 구축한 프로젝트입니다.</strong></p>
+<p><strong>LangGraph 1.x 기반의 Human-In-The-Loop (HITL) 멀티 에이전트 워크플로우와 FastAPI 비동기 SSE 스트리밍 서버를 구축하여, 게임 서비스센터 운영(유저/버그 신고, 인게임 RAG Q&amp;A)을 자동화한 에이전틱 AI 프로젝트입니다.</strong></p>
 </blockquote>
 <hr />
 <h2 id="1-project-overview">1. Project Overview (프로젝트 개요)</h2>
 <ul>
-<li><strong>기간</strong>: 2026.01.28 ~ 2026.02.27 (부트캠프 최종 프로젝트 | 5명)</li>
-<li><strong>역할</strong>: AI 모델 구현, 백엔드 비동기 태스크 큐 설계 및 구현, 개발 환경(<code>uv</code> 워크스페이스) 구축 및 최적화</li>
-<li><strong>핵심 기술 스택</strong>: <ul>
-<li><strong>AI &amp; Model</strong>: PyTorch, PyTorch Lightning, Transformers (SigLIP), ONNX Runtime GPU, WandB</li>
-<li><strong>Backend</strong>: FastAPI, TaskIQ, Redis, SQLModel (ORM), PostgreSQL, Boto3 (S3)</li>
-<li><strong>DevOps &amp; Tooling</strong>: uv (Workspace), Git, Docker</li>
+<li><strong>기간</strong>: 2026.07.16 ~ 2026.07.21 (이어드림스쿨 프로젝트)</li>
+<li><strong>역할</strong>: Agentic AI 워크플로우 설계, 백엔드 비동기 스트리밍 API 개발, LlamaIndex RAG 시스템 구축, 프론트엔드 연동 지원 (백엔드 &amp; Agentic Architecture 중심)</li>
+<li><strong>핵심 기술 스택</strong>:</li>
+<li><strong>Agentic AI &amp; RAG</strong>: LangGraph 1.x, LangChain, LlamaIndex, OpenAI API, HuggingFace Embeddings</li>
+<li><strong>Backend &amp; Streaming</strong>: FastAPI, Uvicorn, SSE (Server-Sent Events), Pydantic, Python 3.12, <code>uv</code></li>
+<li><strong>DevOps &amp; Frontend</strong>: Docker, Docker Compose, React (Chat Streaming UI)</li>
+<li><strong>Github</strong>: https://github.com/dhnam0502/YearDream_AgenticAI</li>
 </ul>
-</li>
-<li><strong>Github</strong>: https://github.com/AICV-Deepfaker/deepfaker_detection</li>
-</ul>
-<h3 id="architecture-pipeline">🌐 비동기 추론 아키텍처 파이프라인 (Architecture Pipeline)</h3>
-<p>고부하 AI 모델 추론 시 서버 병목을 방지하고 사용자 경험을 극대화하기 위해 설계한 비동기 추론 아키텍처입니다.</p>
+<h3 id="human-in-the-loop-hitl">🌐 Human-In-The-Loop (HITL) 워크플로우 아키텍처</h3>
+<p>사용자 문의 유형(신고, 버그, 인게임 Q&amp;A)을 분류하고, 유저/버그 신고 시 연속 대화가 필요한 경우 LangGraph Checkpoint 및 Interrupt를 이용해 대화 흐름을 제어하는 비동기 스트리밍 구조입니다.</p>
 <pre class="mermaid"><code>sequenceDiagram
     autonumber
-    actor User as 사용자 (App)
-    participant API as FastAPI 백엔드
-    participant DB as PostgreSQL (SQLModel)
-    participant Broker as TaskIQ Broker (Redis)
-    participant Worker as TaskIQ Worker
-    participant S3 as AWS S3 Storage
-    participant ORT as ONNX Runtime (GPU)
+    actor User as 사용자 (React App)
+    participant API as FastAPI (Workflow Service)
+    participant Graph as LangGraph StateGraph
+    participant Agent as Coordinator / Agents
+    participant Tool as LlamaIndex RAG / Storage
+    participant Checkpoint as MemorySaver (Thread Checkpoint)
 
-    User-&gt;&gt;API: 비디오 업로드 요청
-    API-&gt;&gt;S3: 비디오 파일 업로드
-    S3--&gt;&gt;API: S3 파일 경로 반환
-    API-&gt;&gt;DB: 비디오 메타데이터 저장 (상태: PENDING)
-    API-&gt;&gt;Broker: 비동기 추론 태스크 요청 (video_id)
-    API--&gt;&gt;User: 202 ACCEPTED 반환 (즉시 응답)
+    User-&gt;&gt;API: 챗 메시지 송신 (Thread ID)
+    API-&gt;&gt;Graph: astream_events 실행 (StateGraph)
+    Graph-&gt;&gt;Agent: 의도 분류 및 에이전트 라우팅
 
-    Note over Worker, ORT: 백그라운드 비동기 추론 시작
-    Broker-&gt;&gt;Worker: 태스크 할당 (predict_deepfake_fast)
-    Worker-&gt;&gt;DB: 비디오 상태 업데이트 (PROCESSING)
-    Worker-&gt;&gt;S3: S3에서 비디오 다운로드 (임시 디렉토리)
-    Worker-&gt;&gt;ORT: 비디오 프레임 추출 및 ONNX 추론 실행
-    ORT--&gt;&gt;Worker: 탐지 확률 반환 (REAL/FAKE)
-    Worker-&gt;&gt;DB: 추론 결과 및 리포트 저장 (상태: COMPLETED)
-    Worker-&gt;&gt;Broker: Redis Pub/Sub 채널로 완료 알림 발행
-    Broker--&gt;&gt;User: 실시간 푸시 알림 (추론 완료 및 결과 조회 가능)</code></pre>
+    alt 인게임/프로모션 문의 (RAG)
+        Agent-&gt;&gt;Tool: LlamaIndex Vector Index 검색
+        Tool--&gt;&gt;Agent: 관련 문서 반환
+        Agent--&gt;&gt;Graph: 답변 생성
+    else 유저/버그 신고 (HITL 시나리오)
+        Agent-&gt;&gt;Checkpoint: 현재 대화 State 및 Intent 저장
+        Agent--&gt;&gt;Graph: 추가 정보 요청 (신고 이유 / 대상)
+        Graph-&gt;&gt;[interrupt]: 대화 일시 중단 (Interrupt)
+        API--&gt;&gt;User: 추가 질의 반환 (SSE/JSONL Stream)
+
+        Note over User, Graph: 사용자가 추가 정보를 입력하고 Resume
+        User-&gt;&gt;API: 신고 상세 정보 답변
+        API-&gt;&gt;Graph: Thread Resume (State 업데이트)
+        Graph-&gt;&gt;Tool: Storage Engine에 리포트 저장
+    end
+
+    Graph--&gt;&gt;API: 스트리밍 이벤트 전달
+    API--&gt;&gt;User: 실시간 응답 출력 (JSONL SSE Stream)</code></pre>
 <hr />
 <h2 id="2-repository-structure">2. Repository Structure (레포지토리 구조)</h2>
-<p>직접 설계하고 구축한 모노레포 워크스페이스 구조와 핵심 기여 모듈(★)입니다.</p>
-<div class="highlight"><pre><span></span><code>deepfaker_detection/ (★ uv 워크스페이스 모노레포)
-├── pyproject.toml          # ★ uv 워크스페이스 및 공통 의존성 설정
-├── uv.lock                 # ★ 전체 워크스페이스 통합 락 파일
-├── ddp_backend/            # ★ FastAPI 백엔드 서비스
-│   ├── core/
-│   │   ├── database.py     # SQLModel DB 세션 및 커넥션 풀 설정
-│   │   ├── tk_broker.py    # TaskIQ Redis 브로커 설정
-│   │   └── s3.py           # Boto3 기반 S3 업로드/다운로드 유틸리티
-│   ├── detectors/          # ★ AI 추론 엔진 래퍼
-│   │   └── visual/
-│   │       ├── base.py     # ★ BaseVideoDetector 추상 클래스
-│   │       └── unite.py    # ★ UNITE ONNX 추론 및 CUDA VRAM 최적화 구현
-│   ├── models/             # ★ SQLModel 기반 DB 테이블 정의
-│   │   ├── models.py       # Result, FastReport, DeepReport 테이블
-│   │   └── user.py         # User 테이블 및 OAuth2 스키마
-│   ├── routers/            # ★ FastAPI API 엔드포인트
-│   │   └── detection.py    # ★ 비동기 태스크 트리거 및 다형성 리포트 응답 라우터
-│   └── task/               # ★ TaskIQ 비동기 작업 정의
-│       └── detection.py    # ★ 비동기 추론 태스크 (S3 다운로드 -&gt; 추론 -&gt; DB 저장)
-└── unite_detection/        # ★ [Submodule] UNITE 모델 학습 및 ONNX 내보내기 엔진
-    ├── pyproject.toml      # ★ CPU/GPU/Flash-Attn 환경 분기 및 의존성 설정
-    └── src/unite_detection/
-        ├── dataset/        # ★ Celeb-DF, SAIL-VOS 등 커스텀 데이터셋 로더
-        ├── lit_modules/    # ★ PyTorch Lightning 모듈 및 콜백
-        │   ├── datamodule.py
-        │   ├── unite_classifier.py  # ★ LightningModule (체크포인트 경량화 포함)
-        │   └── visualization_callback.py # ★ W&amp;B 연동 자동 시각화 콜백
-        ├── losses/         # ★ 커스텀 손실 함수
-        │   └── ad_loss.py  # ★ 논문 구현체 보완 (Differentiable AD Loss)
-        ├── models/         # ★ 신경망 아키텍처 구현
-        │   ├── unite_model.py # ★ UNITE 메인 모델 (SigLIP + Temporal ViT)
-        │   └── vit_encoder.py # ★ Temporal ViT Encoder
-        └── train.py        # 학습 엔트리포인트
+<p>백엔드 워크플로우 및 RAG 검색 엔진, 프론트엔드 연동 호환을 전담하여 구성한 구조와 핵심 기여 모듈(★)입니다.</p>
+<div class="highlight"><pre><span></span><code>YearDream_AgenticAI/
+├── docker-compose-dev.yml      # ★ Docker Compose 개발 환경 (Backend, Frontend, Timezone)
+├── README.md                   # 프로젝트 기획 및 에이전트 구조 문서
+├── backend/                    # ★ 백엔드 및 Agentic AI 파이프라인. LangManus 레포지토리를 기반으로 함.
+│   ├── Dockerfile              # ★ 백엔드 컨테이너화 설정
+│   ├── pyproject.toml          # ★ uv 기반 의존성 및 Pyrefly 설정
+│   ├── uv.lock                 # 의존성 락 파일
+│   ├── main.py                 # ★ CLI 및 비동기 워크플로우 실행 테스트 엔트리포인트
+│   ├── server.py               # Uvicorn 서버 실행 스크립트
+│   ├── data/                   # 테스트 및 문서 데이터 (documents/, CSV 등)
+│   └── src/
+│       ├── api/
+│       │   └── app.py          # ★ FastAPI 라우터 &amp; SSE / JSONL 스트리밍 엔드포인트
+│       ├── service/
+│       │   └── workflow_service.py # ★ LangGraph 비동기 서비스 &amp; Thread 관리
+│       ├── workflow.py         # ★ LangGraph Workflow 인스턴스 및 실행 로직 (invoke v2)
+│       ├── graph/
+│       │   ├── builder.py      # ★ StateGraph 노드 및 엣지 연결
+│       │   ├── nodes.py        # ★ Coordinator, Report, RAG 처리 노드
+│       │   └── types.py        # ★ AgentState 및 Pydantic 스키마 정의
+│       ├── agents/
+│       │   ├── agents.py       # ★ LLM 래퍼 및 에이전트 생성기
+│       │   └── llm.py          # LangChain ChatOpenAI 초기화
+│       ├── tools/
+│       │   ├── retrieve_tool.py          # ★ LlamaIndex Vector Index Persist &amp; RAG 툴
+│       │   └── resolve_target_user_tool.py# ★ 신고 대상 유저 검증 툴
+│       ├── utils/
+│       │   ├── report_saver.py           # 리포트 저장 인터페이스
+│       │   └── storage_engine.py         # ★ CSV/DB 영속화 Storage Engine
+│       └── prompts/            # ★ 에이전트별 시스템 프롬프트 (coordinator, user_report 등)
+└── frontend/                   # 프론트엔드 (React)
+    └── src/
+        └── components/
+            └── Chat.js         # ★ SSE/JSONL 스트리밍 응답 파싱 및 React Chat 연동
 </code></pre></div>
 <hr />
 <h2 id="3-key-contributions-code-highlights">3. Key Contributions &amp; Code Highlights (핵심 기여 및 코드 하이라이트)</h2>
-<h3 id="1-modern-python-tooling-uv">① Modern Python Tooling: <code>uv</code> 워크스페이스 환경 구축</h3>
+<h3 id="1-langgraph-1x-stategraph-human-in-the-loop-hitl">① LangGraph 1.x 기반 StateGraph &amp; Human-In-The-Loop (HITL) 설계</h3>
 <ul>
-<li><strong>도전 과제</strong>: 로컬 개발 환경(Mac/Windows)과 학습 서버(Linux GPU) 간의 PyTorch CUDA 버전 및 <code>flash-attn</code> 빌드 의존성 충돌로 인해 환경 구축 시 잦은 오류 발생.</li>
-<li><strong>해결 방안</strong>: 현대적인 Python 패키지 매니저인 <code>uv</code> 워크스페이스를 도입하여 모노레포 내의 여러 패키지를 통합 관리하고, 환경별 의존성을 명확히 분리.</li>
-<li><strong>코드 하이라이트 (<code>pyproject.toml</code> - 루트)</strong>:
-    <div class="highlight"><pre><span></span><code><span class="k">[tool.uv]</span>
-<span class="c1"># flash-attn 빌드 시 PyTorch가 격리되지 않고 먼저 참조되도록 설정 (빌드 실패 방지)</span>
-<span class="n">build-constraint-dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&lt;82.0.0&quot;</span><span class="p">]</span>
-<span class="n">no-build-isolation-package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;flash-attn&quot;</span><span class="p">]</span>
-<span class="n">override-dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="s2">&quot;torch&gt;=2.10.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;torchvision&gt;=0.25.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;torchcodec==0.10.0&quot;</span><span class="p">,</span>
-<span class="p">]</span>
+<li><strong>도전 과제</strong>: 신고 문의(유저 신고, 버그 신고) 시 유저로부터 신고 대상, 이유 등의 정보를 단계적으로 전달받아야 하며, 대화 도중 세션이 유지되고 필요시 대화가 일시 중단(Interrupt)된 후 재개(Resume)될 수 있는 구조가 필요함.</li>
+<li><strong>해결 방안</strong>: LangGraph 1.x의 <code>MemorySaver</code> 체크포인터와 <code>interrupt</code> 구문을 활용하여 Thread 기반 인터럽트 및 재개 시스템을 구현. 턴제 제한(Turn limits)과 멱등한 리포트 키(Idempotent key) 생성을 통해 안정적인 대화 상호작용 달성.</li>
+<li><strong>코드 하이라이트 (<code>backend/src/graph/nodes.py</code> / <code>builder.py</code>)</strong>:
+  <div class="highlight"><pre><span></span><code><span class="c1"># Interrupt 및 HITL 시나리오 처리 노드 예시</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">user_report_node</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="n">messages</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;messages&quot;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="n">report_data</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;report_data&quot;</span><span class="p">,</span> <span class="p">{})</span>
 
-<span class="k">[tool.uv.workspace]</span>
-<span class="n">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Wavelet-CLIP&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ddp_backend&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;unite_detection&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;STT&quot;</span><span class="p">]</span>
-
-<span class="k">[tool.uv.sources]</span>
-<span class="c1"># Linux 환경에서만 PyTorch CUDA 12.8 인덱스를 타겟팅하도록 설정</span>
-<span class="n">torch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;pytorch-cu128&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;sys_platform == &#39;linux&#39;&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="p">]</span>
-<span class="n">torchvision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;pytorch-cu128&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;sys_platform == &#39;linux&#39;&quot;</span><span class="w"> </span><span class="p">},</span>
-<span class="p">]</span>
-<span class="n">unite-detection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">workspace</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">editable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
-</code></pre></div></li>
-</ul>
-<h3 id="2-paper-to-code-unite">② Paper-to-Code: UNITE 모델 직접 구현 및 수식 보완</h3>
-<ul>
-<li><strong>도전 과제</strong>: 공식 코드가 없는 최신 논문(UNITE)을 분석하여 모델을 직접 구현해야 했음. 특히 논문의 핵심인 <strong>Attention-based Anomaly Detection Loss (ADLoss)</strong> 수식 중 클래스 센터 $C$가 연산 그래프에서 분리(<code>detached</code>)되어 있어 PyTorch에서 역전파(Backpropagation)가 불가능한 수학적 한계 발견.</li>
-<li><strong>해결 방안</strong>: <ul>
-<li>SigLIP 이미지 인코더를 Frozen 백본으로 두고, 프레임 간 관계를 학습하는 <strong>Temporal Positional Encoding</strong> 및 <strong>Temporal ViT Encoder</strong>를 직접 설계.</li>
-<li><code>ad_loss.py</code>에서 역전파가 불가능한 센터 $C$ 대신, 미분 가능한 배치 클래스 평균 $P$를 사용하여 클래스 간 손실(Between-class loss)을 계산하도록 수식을 보완하여 학습이 정상적으로 진행되도록 개선.</li>
-</ul>
-</li>
-<li><strong>코드 하이라이트 (<code>unite_detection/src/unite_detection/losses/ad_loss.py</code>)</strong>:
-    <div class="highlight"><pre><span></span><code><span class="c1"># 1. 센터 업데이트 (현재 배치 정보를 활용해 이동 평균 업데이트 - Gradient 분리)</span>
-<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">training</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">arch</span><span class="o">.</span><span class="n">num_cls</span><span class="p">):</span>
-        <span class="n">mask</span><span class="p">:</span> <span class="n">Bool</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;batch&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span> <span class="o">==</span> <span class="n">c</span>
-        <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-            <span class="n">valid_cls</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">batch_class_mean</span><span class="p">:</span> <span class="n">Float</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;head frame&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">P_norm</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-            <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
-                <span class="c1"># C[c]는 역전파가 되지 않는 버퍼로 업데이트</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">eta</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">eta</span> <span class="o">*</span> <span class="n">batch_class_mean</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
-
-            <span class="c1"># [수식 보완] 논문에서는 C와 C 사이의 거리를 계산하라고 되어 있으나,</span>
-            <span class="c1"># C는 gradient가 흐르지 않으므로 미분 가능한 batch_class_mean(P)을 사용하여 Loss 계산!</span>
-            <span class="n">dist_matrix</span><span class="p">:</span> <span class="n">Float</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;head head&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cdist</span><span class="p">(</span><span class="n">batch_class_mean</span><span class="p">,</span> <span class="n">batch_class_mean</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-            <span class="c1"># ... 이후 loss_between 계산 진행</span>
-</code></pre></div></li>
-</ul>
-<h3 id="3-pytorch-lightning">③ PyTorch Lightning 기반 학습 파이프라인 최적화</h3>
-<ul>
-<li><strong>도전 과제</strong>: 대용량 Frozen 백본(SigLIP)이 체크포인트마다 중복 저장되어 디스크 공간을 기가바이트 단위로 낭비하고, 체크포인트 저장 속도가 매우 느려짐.</li>
-<li><strong>해결 방안</strong>: <code>on_save_checkpoint</code>를 오버라이드하여 학습 대상이 아닌 Frozen 파라미터(<code>vis_encoder</code>)를 체크포인트 저장 대상에서 제외하는 최적화 적용.</li>
-<li><strong>코드 하이라이트 (<code>unite_detection/src/unite_detection/lit_modules/unite_classifier.py</code>)</strong>:
-    <div class="highlight"><pre><span></span><code><span class="nd">@override</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">on_save_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">checkpoint</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;체크포인트 저장 시 Frozen 파라미터(Backbone)를 제외하여 용량을 획기적으로 줄입니다.&quot;&quot;&quot;</span>
-    <span class="n">state_dict</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s2">&quot;state_dict&quot;</span><span class="p">]</span>
-
-    <span class="c1"># 저장하지 않을 키 필터링 (vis_encoder 관련 키들 제거)</span>
-    <span class="n">keys_to_remove</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">state_dict</span> <span class="k">if</span> <span class="s2">&quot;model.vis_encoder&quot;</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys_to_remove</span><span class="p">:</span>
-        <span class="k">del</span> <span class="n">state_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Optimizer] Removed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">keys_to_remove</span><span class="p">)</span><span class="si">}</span><span class="s2"> frozen backbone keys from checkpoint.&quot;</span><span class="p">)</span>
-</code></pre></div></li>
-</ul>
-<h3 id="4-onnx-runtime-cuda-vram">④ ONNX Runtime &amp; CUDA VRAM 최적화</h3>
-<ul>
-<li><strong>도전 과제</strong>: GPU 서버에서 다중 비동기 추론 세션 실행 시 CUDA 메모리 단편화(Fragmentation)로 인해 VRAM 여유가 있음에도 <code>cublasCreate</code> 실패 및 서버 크래시 발생.</li>
-<li><strong>해결 방안</strong>: ONNX Runtime의 세션 옵션 및 CUDA Execution Provider 설정을 정밀하게 튜닝하고, 추론 직전 PyTorch 캐시를 강제로 비우는 방어적 코드 작성.</li>
-<li><strong>코드 하이라이트 (<code>ddp_backend/detectors/visual/unite.py</code>)</strong>:
-    <div class="highlight"><pre><span></span><code><span class="nd">@override</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">load_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-    <span class="n">sess_options</span> <span class="o">=</span> <span class="n">ort</span><span class="o">.</span><span class="n">SessionOptions</span><span class="p">()</span>
-    <span class="n">sess_options</span><span class="o">.</span><span class="n">enable_mem_pattern</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">sess_options</span><span class="o">.</span><span class="n">enable_cpu_mem_arena</span> <span class="o">=</span> <span class="kc">False</span>
-
-    <span class="k">if</span> <span class="n">ort</span><span class="o">.</span><span class="n">get_device</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;GPU&quot;</span><span class="p">:</span>
-        <span class="n">cuda_provider_options</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;device_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-            <span class="s2">&quot;arena_extend_strategy&quot;</span><span class="p">:</span> <span class="s2">&quot;kSameAsRequested&quot;</span><span class="p">,</span> <span class="c1"># 필요한 만큼만 VRAM 할당 (기본값은 큰 블록 선점)</span>
-            <span class="s2">&quot;initial_chunk_size_bytes&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span>   <span class="c1"># 초기 아레나 크기를 1MB로 최소화해 cublasCreate 실패 방지</span>
-            <span class="s2">&quot;gpu_mem_limit&quot;</span><span class="p">:</span> <span class="mi">14</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span>      <span class="c1"># ORT가 사용 가능한 최대 VRAM 제한 (14 GB)</span>
-            <span class="s2">&quot;cudnn_conv_algo_search&quot;</span><span class="p">:</span> <span class="s2">&quot;DEFAULT&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;do_copy_in_default_stream&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="c1"># 필수 정보(신고 대상 유저, 사유) 검증</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">report_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;target_user&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">report_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;reason&quot;</span><span class="p">):</span>
+        <span class="c1"># 유저에게 추가 질문 후 대화 일시 중단 (Human-In-The-Loop)</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">AIMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s2">&quot;신고하실 유저의 닉네임과 신고 사유를 말씀해 주세요.&quot;</span><span class="p">)],</span>
+            <span class="s2">&quot;next_action&quot;</span><span class="p">:</span> <span class="s2">&quot;wait_user_input&quot;</span>
         <span class="p">}</span>
-        <span class="c1"># PyTorch 캐시 해제 후 ORT 세션 초기화 (단편화된 VRAM 확보)</span>
-        <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
-        <span class="n">providers</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;CUDAExecutionProvider&quot;</span><span class="p">,</span> <span class="n">cuda_provider_options</span><span class="p">),</span> <span class="s2">&quot;CPUExecutionProvider&quot;</span><span class="p">]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">providers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CPUExecutionProvider&quot;</span><span class="p">]</span>
 
-    <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">ort</span><span class="o">.</span><span class="n">InferenceSession</span><span class="p">(</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">model_path</span><span class="p">,</span>
-        <span class="n">sess_options</span><span class="o">=</span><span class="n">sess_options</span><span class="p">,</span>
-        <span class="n">providers</span><span class="o">=</span><span class="n">providers</span><span class="p">,</span>
-    <span class="p">)</span>
+    <span class="c1"># 유저 검증 및 Storage Engine 저장</span>
+    <span class="n">save_result</span> <span class="o">=</span> <span class="n">storage_engine</span><span class="o">.</span><span class="n">save_user_report</span><span class="p">(</span><span class="n">report_data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">AIMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;신고 접수가 완료되었습니다. (접수 번호: </span><span class="si">{</span><span class="n">save_result</span><span class="p">[</span><span class="s1">&#39;report_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)],</span>
+        <span class="s2">&quot;is_completed&quot;</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="p">}</span>
 </code></pre></div></li>
+</ul>
+<h3 id="2-fastapi-sse-jsonl">② FastAPI &amp; SSE / JSONL 비동기 이벤트 스트리밍 엔드포인트 구축</h3>
+<ul>
+<li><strong>도전 과제</strong>: 에이전트의 사고 과정, RAG 검색 결과, 답변 생성이 비동기로 일어날 때, 클라이언트에 실시간으로 이벤트를 전달(Streaming)하면서도 LangGraph 1.x의 <code>astream_events</code> 스키마 변경에 대응해야 함.</li>
+<li><strong>해결 방안</strong>: <code>workflow_service.py</code>와 <code>app.py</code>에서 FastAPI <code>StreamingResponse</code>를 적용하고 JSONL/SSE 포맷으로 스트리밍 이벤트를 생성. LangGraph invoke v2 표준에 맞춰 이벤트 파싱 파이프라인을 구축.</li>
+<li><strong>코드 하이라이트 (<code>backend/src/service/workflow_service.py</code>)</strong>:
+  <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream_workflow_events</span><span class="p">(</span><span class="n">thread_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;configurable&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;thread_id&quot;</span><span class="p">:</span> <span class="n">thread_id</span><span class="p">}}</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">HumanMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">message</span><span class="p">)]}</span>
+
+    <span class="c1"># LangGraph astream_events (v2) 비동기 이벤트 스트리밍</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">workflow</span><span class="o">.</span><span class="n">astream_events</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;v2&quot;</span><span class="p">):</span>
+        <span class="n">kind</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;on_chat_model_stream&quot;</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;chunk&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">content</span>
+            <span class="k">if</span> <span class="n">content</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;token&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;content&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">content</span><span class="p">})</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;on_tool_start&quot;</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;tool_start&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;tool&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]})</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;on_tool_end&quot;</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;tool_end&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;output&#39;</span><span class="p">:</span><span class="w"> </span><span class="nb">str</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">))})</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+</code></pre></div></li>
+</ul>
+<h3 id="3-llamaindex-rag-vector-store-target-user">③ LlamaIndex 기반 RAG Vector Store 영속화 및 Target User 검증 툴 구현</h3>
+<ul>
+<li><strong>도전 과제</strong>: 인게임 안내/프로모션 문서를 신속하게 검색하고, 유저 신고 시 존재하지 않는 대상 유저에 대한 허위 신고를 방지하는 검증 시스템이 필요함.</li>
+<li><strong>해결 방안</strong>: LlamaIndex를 이용해 문서를 청크화 및 인덱싱하고 디렉토리에 영속화(<code>StorageContext.from_defaults(persist_dir=...)</code>)하여 서버 재시작 시 재인덱싱 오버헤드를 제거함. 또한 유저 DB/CSV와 연동되는 <code>resolve_target_user_tool</code> 및 커스텀 <code>StorageEngine</code>을 개발하여 신고 데이터의 신뢰성을 확보.</li>
+<li><strong>코드 하이라이트 (<code>backend/src/tools/retrieve_tool.py</code>)</strong>:
+  <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_or_create_vector_index</span><span class="p">(</span><span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">persist_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">persist_dir</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">persist_dir</span><span class="p">):</span>
+        <span class="n">storage_context</span> <span class="o">=</span> <span class="n">StorageContext</span><span class="o">.</span><span class="n">from_defaults</span><span class="p">(</span><span class="n">persist_dir</span><span class="o">=</span><span class="n">persist_dir</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">load_index_from_storage</span><span class="p">(</span><span class="n">storage_context</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">documents</span> <span class="o">=</span> <span class="n">SimpleDirectoryReader</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">VectorStoreIndex</span><span class="o">.</span><span class="n">from_documents</span><span class="p">(</span><span class="n">documents</span><span class="p">)</span>
+        <span class="n">index</span><span class="o">.</span><span class="n">storage_context</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="n">persist_dir</span><span class="o">=</span><span class="n">persist_dir</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">index</span>
+</code></pre></div></li>
+</ul>
+<h3 id="4-docker-uv">④ 풀스택 연동 지원 &amp; Docker / uv 개발 환경 구축</h3>
+<ul>
+<li><strong>도전 과제</strong>: 백엔드의 SSE 스트리밍 데이터 구조 변경에 따라 React 프론트엔드(<code>Chat.js</code>)와의 통신 깨짐 현상 및 로컬/컨테이너 환경 간 타임존/CORS 불일치 발생.</li>
+<li><strong>해결 방안</strong>: React <code>Chat.js</code> 컴포넌트의 비동기 스트림 파서 코드를 백엔드 JSONL 규격에 맞춰 직접 수정하고, <code>docker-compose-dev.yml</code>에 CORS 헤더 설정 및 타임존 환경변수(<code>TZ=Asia/Seoul</code>)를 통합 적용하여 전천후 개발 환경을 정립.</li>
 </ul>
 <hr />
 <h2 id="4-troubleshooting-stories">4. Troubleshooting Stories (트러블슈팅 경험)</h2>
-<h3 id="data-leakage-validation-test">🚨 [Data Leakage] Validation 성능은 비정상적으로 높은데 Test 성능은 낮은 현상</h3>
+<h3 id="langgraph-1x-migration-langgraph-react-agent-stategraph">🚨 [LangGraph 1.x Migration] LangGraph 버전 상향에 따른 ReAct Agent 생성 및 StateGraph 구축 패러다임 변화</h3>
 <ul>
-<li><strong>문제 현상</strong>: 모델 학습 시 Validation Accuracy가 98% 이상으로 비정상적으로 높게 나왔으나, 실제 Test 데이터셋에서는 성능이 70% 수준으로 급격히 하락하는 과적합/일반화 실패 현상 발생.</li>
-<li><strong>원인 분석</strong>: <ul>
-<li>데이터셋을 Train/Validation으로 나눌 때 무작위(Random Split)로 분할함.</li>
-<li>그러나 비디오 데이터 특성상 하나의 영상에서 여러 프레임(32프레임 단위)을 추출하여 학습 데이터로 사용하기 때문에, 영상 단위로 분할하지 않으면 <strong>동일한 비디오에서 나온 매우 유사한 프레임들이 Train과 Validation에 동시에 들어가게 되는 데이터 누수(Data Leakage)</strong>가 발생함이 원인이었음.</li>
-</ul>
-</li>
-<li><strong>해결 방안</strong>: 데이터셋 분할 방식을 프레임 레벨 무작위 분할에서 <strong>비디오 ID 기준 그룹 분할(Video-level Split)</strong>로 전면 수정함. 수정 후 Validation 지표가 Test 지표와 유사한 수준(약 82%)으로 조정되었으며, 데이터 누수 없는 신뢰할 수 있는 평가 파이프라인을 확보함.</li>
-</ul>
-<h3 id="git-rebase">🚨 [Git] Rebase 중 발생한 대형 커밋 소실 복구</h3>
-<ul>
-<li><strong>문제 현상</strong>: 충돌(Conflict)이 발생한 브랜치를 Rebase하는 도중, 실수로 하루 동안 작업한 대규모 커밋이 날아가 버리는 상황 발생.</li>
-<li><strong>해결 방안</strong>: Git의 커밋 이력 추적 도구인 <code>git reflog</code>를 실행하여 잃어버린 커밋의 해시값을 찾아내고, <code>git reset --hard</code>로 헤드를 복구한 뒤, 충돌이 발생한 커밋을 체리피킹(<code>git cherry-pick</code>)하여 안전하게 작업을 복구함. 이 경험을 통해 Git의 내부 동작 원리와 복구 메커니즘을 깊이 이해하게 됨.</li>
+<li><strong>문제 상황</strong>: 기존 LangChain/LangGraph 레거시 방식(<code>create_react_agent</code>)으로 에이전트 구성은 deprecated됨. 버전을 높여 마이그레이션 할 필요가 있음.</li>
+<li><strong>원인 분석</strong>:</li>
+<li>LangGraph가 1.x 버전으로 올라가며 ReAct 에이전트 생성 체계와 노드 간 State 전달 방식이 대대적으로 개편됨.</li>
+<li>기존에는 <code>AgentExecutor</code>나 레거시 <code>create_react_agent</code>가 프롬프트와 툴 바인딩을 암묵적으로 처리했으나, 1.x 환경에서는 <code>StateGraph</code> 내에서 <code>state_schema</code>, <code>middleware</code>, <code>response_format</code>을 명시적으로 제어하거나 <code>ToolNode</code> 기반 구조로 정립해야 했음.</li>
+<li>프롬프트 제어를 위한 Middleware 구조와 Pydantic 기반 Structured Output 연동 방식이 변경됨에 따라 기존 에이전트 초기화 및 노드 정의 로직이 동작하지 않았음.</li>
+<li><strong>해결 방안</strong>:</li>
+<li>LangGraph 1.x 사양에 맞춰 <code>create_agent</code> 초기화 함수를 재설계하고, <code>state_schema=State</code> 및 커스텀 <code>middleware=[make_prompt_template(...)]</code> 구성을 적용하여 프롬프트 주입과 상태 관리를 체계화함.</li>
+<li>Pydantic 스키마(<code>UserReportIntentCheck</code>) 기반 <code>response_format</code>을 지정하여 에이전트의 구조화된 출력(Structured Output) 안정성을 확보.</li>
+<li><code>builder.py</code>에서 <code>StateGraph</code>의 노드 간 흐름과 조건부 엣지를 명시적으로 배치하고, 툴 실행 결과를 <code>AgentState</code>로 올바르게 업데이트하도록 파이프라인을 정립하여 ReAct 루프를 안정적으로 작동시킴.</li>
 </ul>
 
 
