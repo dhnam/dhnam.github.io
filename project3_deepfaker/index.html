@@ -543,6 +543,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../yeardream_project_paragraphy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    논술 AI 학습 플랫폼 (Paragraphy)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -552,10 +579,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -573,8 +600,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2883,24 +2910,24 @@
 <li><strong>코드 하이라이트 (<code>pyproject.toml</code> - 루트)</strong>:
   <div class="highlight"><pre><span></span><code><span class="k">[tool.uv]</span>
 <span class="c1"># flash-attn 빌드 시 PyTorch가 격리되지 않고 먼저 참조되도록 설정 (빌드 실패 방지)</span>
-<span class="n">build-constraint-dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&lt;82.0.0&quot;</span><span class="p">]</span>
-<span class="n">no-build-isolation-package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;flash-attn&quot;</span><span class="p">]</span>
+<span class="n">build-constraint-dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"setuptools&lt;82.0.0"</span><span class="p">]</span>
+<span class="n">no-build-isolation-package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"flash-attn"</span><span class="p">]</span>
 <span class="n">override-dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="s2">&quot;torch&gt;=2.10.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;torchvision&gt;=0.25.0&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s2">&quot;torchcodec==0.10.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"torch&gt;=2.10.0"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"torchvision&gt;=0.25.0"</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">"torchcodec==0.10.0"</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="k">[tool.uv.workspace]</span>
-<span class="n">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Wavelet-CLIP&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ddp_backend&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;unite_detection&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;STT&quot;</span><span class="p">]</span>
+<span class="n">members</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"Wavelet-CLIP"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ddp_backend"</span><span class="p">,</span><span class="w"> </span><span class="s2">"unite_detection"</span><span class="p">,</span><span class="w"> </span><span class="s2">"STT"</span><span class="p">]</span>
 
 <span class="k">[tool.uv.sources]</span>
 <span class="c1"># Linux 환경에서만 PyTorch CUDA 12.8 인덱스를 타겟팅하도록 설정</span>
 <span class="n">torch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;pytorch-cu128&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;sys_platform == &#39;linux&#39;&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"pytorch-cu128"</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"sys_platform == 'linux'"</span><span class="w"> </span><span class="p">},</span>
 <span class="p">]</span>
 <span class="n">torchvision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;pytorch-cu128&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;sys_platform == &#39;linux&#39;&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"pytorch-cu128"</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">"sys_platform == 'linux'"</span><span class="w"> </span><span class="p">},</span>
 <span class="p">]</span>
 <span class="n">unite-detection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">workspace</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="n">editable</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div></li>
@@ -2915,17 +2942,17 @@
   <div class="highlight"><pre><span></span><code><span class="c1"># 1. 센터 업데이트 (현재 배치 정보를 활용해 이동 평균 업데이트 - Gradient 분리)</span>
 <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">training</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">arch</span><span class="o">.</span><span class="n">num_cls</span><span class="p">):</span>
-        <span class="n">mask</span><span class="p">:</span> <span class="n">Bool</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;batch&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span> <span class="o">==</span> <span class="n">c</span>
+        <span class="n">mask</span><span class="p">:</span> <span class="n">Bool</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">"batch"</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span> <span class="o">==</span> <span class="n">c</span>
         <span class="k">if</span> <span class="n">mask</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
             <span class="n">valid_cls</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">batch_class_mean</span><span class="p">:</span> <span class="n">Float</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;head frame&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">P_norm</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">batch_class_mean</span><span class="p">:</span> <span class="n">Float</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">"head frame"</span><span class="p">]</span> <span class="o">=</span> <span class="n">P_norm</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
             <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
                 <span class="c1"># C[c]는 역전파가 되지 않는 버퍼로 업데이트</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">eta</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">eta</span> <span class="o">*</span> <span class="n">batch_class_mean</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
 
             <span class="c1"># [수식 보완] 논문에서는 C와 C 사이의 거리를 계산하라고 되어 있으나,</span>
             <span class="c1"># C는 gradient가 흐르지 않으므로 미분 가능한 batch_class_mean(P)을 사용하여 Loss 계산!</span>
-            <span class="n">dist_matrix</span><span class="p">:</span> <span class="n">Float</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;head head&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cdist</span><span class="p">(</span><span class="n">batch_class_mean</span><span class="p">,</span> <span class="n">batch_class_mean</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">dist_matrix</span><span class="p">:</span> <span class="n">Float</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">"head head"</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cdist</span><span class="p">(</span><span class="n">batch_class_mean</span><span class="p">,</span> <span class="n">batch_class_mean</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
             <span class="c1"># ... 이후 loss_between 계산 진행</span>
 </code></pre></div></li>
 </ul>
@@ -2936,15 +2963,15 @@
 <li><strong>코드 하이라이트 (<code>unite_detection/src/unite_detection/lit_modules/unite_classifier.py</code>)</strong>:
   <div class="highlight"><pre><span></span><code><span class="nd">@override</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">on_save_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">checkpoint</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;체크포인트 저장 시 Frozen 파라미터(Backbone)를 제외하여 용량을 획기적으로 줄입니다.&quot;&quot;&quot;</span>
-    <span class="n">state_dict</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s2">&quot;state_dict&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">"""체크포인트 저장 시 Frozen 파라미터(Backbone)를 제외하여 용량을 획기적으로 줄입니다."""</span>
+    <span class="n">state_dict</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s2">"state_dict"</span><span class="p">]</span>
 
     <span class="c1"># 저장하지 않을 키 필터링 (vis_encoder 관련 키들 제거)</span>
-    <span class="n">keys_to_remove</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">state_dict</span> <span class="k">if</span> <span class="s2">&quot;model.vis_encoder&quot;</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
+    <span class="n">keys_to_remove</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">state_dict</span> <span class="k">if</span> <span class="s2">"model.vis_encoder"</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys_to_remove</span><span class="p">:</span>
         <span class="k">del</span> <span class="n">state_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Optimizer] Removed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">keys_to_remove</span><span class="p">)</span><span class="si">}</span><span class="s2"> frozen backbone keys from checkpoint.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[Optimizer] Removed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">keys_to_remove</span><span class="p">)</span><span class="si">}</span><span class="s2"> frozen backbone keys from checkpoint."</span><span class="p">)</span>
 </code></pre></div></li>
 </ul>
 <h3 id="4">④ 이기종/다양한 구조 데이터셋 통합을 위한 커스텀 데이터셋 아키텍처 구축</h3>
@@ -2956,7 +2983,7 @@
 <li><strong>다형성(Polymorphism) 기반 데이터 통합</strong>: <code>CelebDFVideoDataset</code>, <code>CelebDFImageDataset</code>, <code>FFDataset</code>, <code>SailVosDataset</code> 등이 동일한 기반 인터페이스를 구현하도록 하여, PyTorch Lightning DataModule에서 이기종 데이터셋을 동일한 방식으로 유연하게 결합하고 통합 학습 파이프라인 구축.</li>
 <li><strong>코드 하이라이트 (<code>unite_detection/src/unite_detection/dataset/base_dataset.py</code>)</strong>:
   <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">DeepFakeBaseDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">Tensor</span><span class="p">]],</span> <span class="n">ABC</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;이기종 딥페이크 데이터셋 통합을 위한 공통 추상 클래스&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""이기종 딥페이크 데이터셋 통합을 위한 공통 추상 클래스"""</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">paths</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span><span class="p">],</span>
@@ -2969,14 +2996,14 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">samples</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">FileMeta</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Lazy Initialization으로 메타데이터 및 청크 목록 지연 생성&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Lazy Initialization으로 메타데이터 및 청크 목록 지연 생성"""</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_samples</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_samples</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_samples</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_paths</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_samples</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_prepare_samples</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paths</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;데이터 형태에 맞춰 프레임 청크(Chunk) 단위로 샘플 인덱싱&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""데이터 형태에 맞춰 프레임 청크(Chunk) 단위로 샘플 인덱싱"""</span>
         <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="n">Path</span><span class="p">,</span> <span class="n">paths</span><span class="p">):</span>
             <span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_label</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -2989,10 +3016,10 @@
             <span class="n">num_chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor</span><span class="o">.</span><span class="n">calculate_num_chunks</span><span class="p">(</span><span class="n">frame_cnt</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_chunks</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_samples</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-                    <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span>
-                    <span class="s2">&quot;chunk_idx&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span>
-                    <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span>
-                    <span class="s2">&quot;total_frames&quot;</span><span class="p">:</span> <span class="n">frame_cnt</span><span class="p">,</span>
+                    <span class="s2">"path"</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span>
+                    <span class="s2">"chunk_idx"</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span>
+                    <span class="s2">"label"</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span>
+                    <span class="s2">"total_frames"</span><span class="p">:</span> <span class="n">frame_cnt</span><span class="p">,</span>
                 <span class="p">})</span>
 
     <span class="nd">@abstractmethod</span>
@@ -3003,7 +3030,7 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">_get_label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Float</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;channel batch h w&quot;</span><span class="p">],</span> <span class="n">Int</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">&quot;batch&quot;</span><span class="p">]]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Float</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">"channel batch h w"</span><span class="p">],</span> <span class="n">Int</span><span class="p">[</span><span class="n">Tensor</span><span class="p">,</span> <span class="s2">"batch"</span><span class="p">]]:</span>
         <span class="c1"># Processor에 전처리 전략을 위임하여 동일한 인터페이스로 텐서 반환</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor</span><span class="o">.</span><span class="n">getitem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
 </code></pre></div></li>

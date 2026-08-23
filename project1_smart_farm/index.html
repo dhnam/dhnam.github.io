@@ -532,6 +532,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../yeardream_project_paragraphy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    논술 AI 학습 플랫폼 (Paragraphy)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -541,10 +568,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -562,8 +589,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2819,26 +2846,26 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">process_single_image_label</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    중첩 ZIP 파일 내부의 이미지와 JSON 라벨 스트림을 직접 매핑하여 YOLO 포맷으로 실시간 변환하는 워커 함수</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="p">(</span><span class="n">parent_zip_path</span><span class="p">,</span> <span class="n">child_img_zip_name</span><span class="p">,</span> <span class="n">child_label_zip_name</span><span class="p">,</span> 
      <span class="n">img_filename</span><span class="p">,</span> <span class="n">label_filename</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">)</span> <span class="o">=</span> <span class="n">args</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># 1. 부모 ZIP 열기</span>
-        <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">parent_zip_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">parent_zip</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">parent_zip_path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">parent_zip</span><span class="p">:</span>
             <span class="c1"># 2. 자식 이미지 ZIP을 메모리 스트림으로 읽기</span>
             <span class="k">with</span> <span class="n">parent_zip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">child_img_zip_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">child_img_zip_data</span><span class="p">:</span>
                 <span class="n">img_zip_stream</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">child_img_zip_data</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-                <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">img_zip_stream</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">child_img_zip</span><span class="p">:</span>
+                <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">img_zip_stream</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">child_img_zip</span><span class="p">:</span>
                     <span class="c1"># 이미지 데이터 로드</span>
                     <span class="n">img_data</span> <span class="o">=</span> <span class="n">child_img_zip</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">img_filename</span><span class="p">)</span>
 
             <span class="c1"># 3. 자식 라벨 ZIP을 메모리 스트림으로 읽기</span>
             <span class="k">with</span> <span class="n">parent_zip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">child_label_zip_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">child_label_zip_data</span><span class="p">:</span>
                 <span class="n">label_zip_stream</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">child_label_zip_data</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-                <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">label_zip_stream</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">child_label_zip</span><span class="p">:</span>
+                <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">label_zip_stream</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">child_label_zip</span><span class="p">:</span>
                     <span class="c1"># JSON 라벨 데이터 로드 및 파싱</span>
                     <span class="n">label_data</span> <span class="o">=</span> <span class="n">child_label_zip</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">label_filename</span><span class="p">)</span>
 
@@ -2846,7 +2873,7 @@
         <span class="c1"># (디스크 I/O를 최소화하고 메모리 상에서 변환을 완료하여 최종 텍스트/이미지만 저장)</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Error] Failed to process </span><span class="si">{</span><span class="n">img_filename</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[Error] Failed to process </span><span class="si">{</span><span class="n">img_filename</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div></li>
 </ul>
@@ -2856,9 +2883,9 @@
 <li><strong>해결 방안</strong>: OpenCV 오버레이 시각화 함수와 정규화된 YOLO 좌표계 기준의 IoU 계산 알고리즘 구현.</li>
 <li><strong>코드 하이라이트 (<code>smartfarm_strawberry_aihub_2_0_training_detection.ipynb</code>)</strong>:
     <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">calculate_iou_normalized</span><span class="p">(</span><span class="n">box1</span><span class="p">,</span> <span class="n">box2</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    YOLO 포맷 (x_center, y_center, width, height) 정규화 좌표계 기준 IoU 계산</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># 1. (x_center, y_center, w, h) -&gt; (x1, y1, x2, y2) 변환</span>
     <span class="n">b1_x1</span><span class="p">,</span> <span class="n">b1_x2</span> <span class="o">=</span> <span class="n">box1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">box1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">box1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">box1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span>
     <span class="n">b1_y1</span><span class="p">,</span> <span class="n">b1_y2</span> <span class="o">=</span> <span class="n">box1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">box1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">box1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">box1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span>

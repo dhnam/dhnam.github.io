@@ -12,7 +12,7 @@
         <link rel="prev" href="../project3_deepfaker/">
       
       
-        <link rel="next" href="../old/2022-01-02-welcome-to-jekyll/">
+        <link rel="next" href="../yeardream_project_paragraphy/">
       
       
         
@@ -532,6 +532,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../yeardream_project_paragraphy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    논술 AI 학습 플랫폼 (Paragraphy)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -541,10 +568,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -562,8 +589,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2862,22 +2889,22 @@
 <li><strong>코드 하이라이트 (<code>backend/src/graph/nodes.py</code> / <code>builder.py</code>)</strong>:
   <div class="highlight"><pre><span></span><code><span class="c1"># Interrupt 및 HITL 시나리오 처리 노드 예시</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">user_report_node</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="n">AgentState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
-    <span class="n">messages</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;messages&quot;</span><span class="p">,</span> <span class="p">[])</span>
-    <span class="n">report_data</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;report_data&quot;</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="n">messages</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"messages"</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="n">report_data</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"report_data"</span><span class="p">,</span> <span class="p">{})</span>
 
     <span class="c1"># 필수 정보(신고 대상 유저, 사유) 검증</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">report_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;target_user&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">report_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;reason&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">report_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"target_user"</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">report_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"reason"</span><span class="p">):</span>
         <span class="c1"># 유저에게 추가 질문 후 대화 일시 중단 (Human-In-The-Loop)</span>
         <span class="k">return</span> <span class="p">{</span>
-            <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">AIMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s2">&quot;신고하실 유저의 닉네임과 신고 사유를 말씀해 주세요.&quot;</span><span class="p">)],</span>
-            <span class="s2">&quot;next_action&quot;</span><span class="p">:</span> <span class="s2">&quot;wait_user_input&quot;</span>
+            <span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span><span class="n">AIMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s2">"신고하실 유저의 닉네임과 신고 사유를 말씀해 주세요."</span><span class="p">)],</span>
+            <span class="s2">"next_action"</span><span class="p">:</span> <span class="s2">"wait_user_input"</span>
         <span class="p">}</span>
 
     <span class="c1"># 유저 검증 및 Storage Engine 저장</span>
     <span class="n">save_result</span> <span class="o">=</span> <span class="n">storage_engine</span><span class="o">.</span><span class="n">save_user_report</span><span class="p">(</span><span class="n">report_data</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">AIMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;신고 접수가 완료되었습니다. (접수 번호: </span><span class="si">{</span><span class="n">save_result</span><span class="p">[</span><span class="s1">&#39;report_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)],</span>
-        <span class="s2">&quot;is_completed&quot;</span><span class="p">:</span> <span class="kc">True</span>
+        <span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span><span class="n">AIMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="sa">f</span><span class="s2">"신고 접수가 완료되었습니다. (접수 번호: </span><span class="si">{</span><span class="n">save_result</span><span class="p">[</span><span class="s1">'report_id'</span><span class="p">]</span><span class="si">}</span><span class="s2">)"</span><span class="p">)],</span>
+        <span class="s2">"is_completed"</span><span class="p">:</span> <span class="kc">True</span>
     <span class="p">}</span>
 </code></pre></div></li>
 </ul>
@@ -2887,20 +2914,20 @@
 <li><strong>해결 방안</strong>: <code>workflow_service.py</code>와 <code>app.py</code>에서 FastAPI <code>StreamingResponse</code>를 적용하고 JSONL/SSE 포맷으로 스트리밍 이벤트를 생성. LangGraph invoke v2 표준에 맞춰 이벤트 파싱 파이프라인을 구축.</li>
 <li><strong>코드 하이라이트 (<code>backend/src/service/workflow_service.py</code>)</strong>:
   <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream_workflow_events</span><span class="p">(</span><span class="n">thread_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;configurable&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;thread_id&quot;</span><span class="p">:</span> <span class="n">thread_id</span><span class="p">}}</span>
-    <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">HumanMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">message</span><span class="p">)]}</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"configurable"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"thread_id"</span><span class="p">:</span> <span class="n">thread_id</span><span class="p">}}</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span><span class="n">HumanMessage</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">message</span><span class="p">)]}</span>
 
     <span class="c1"># LangGraph astream_events (v2) 비동기 이벤트 스트리밍</span>
-    <span class="k">async</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">workflow</span><span class="o">.</span><span class="n">astream_events</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;v2&quot;</span><span class="p">):</span>
-        <span class="n">kind</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;event&quot;</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;on_chat_model_stream&quot;</span><span class="p">:</span>
-            <span class="n">content</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">][</span><span class="s2">&quot;chunk&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">content</span>
+    <span class="k">async</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">workflow</span><span class="o">.</span><span class="n">astream_events</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">"v2"</span><span class="p">):</span>
+        <span class="n">kind</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">"event"</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">"on_chat_model_stream"</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">"data"</span><span class="p">][</span><span class="s2">"chunk"</span><span class="p">]</span><span class="o">.</span><span class="n">content</span>
             <span class="k">if</span> <span class="n">content</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;token&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;content&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">content</span><span class="p">})</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;on_tool_start&quot;</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;tool_start&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;tool&#39;</span><span class="p">:</span><span class="w"> </span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]})</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;on_tool_end&quot;</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;tool_end&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;output&#39;</span><span class="p">:</span><span class="w"> </span><span class="nb">str</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">))})</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="k">yield</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">'type'</span><span class="p">:</span><span class="w"> </span><span class="s1">'token'</span><span class="p">,</span><span class="w"> </span><span class="s1">'content'</span><span class="p">:</span><span class="w"> </span><span class="n">content</span><span class="p">})</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">"on_tool_start"</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">'type'</span><span class="p">:</span><span class="w"> </span><span class="s1">'tool_start'</span><span class="p">,</span><span class="w"> </span><span class="s1">'tool'</span><span class="p">:</span><span class="w"> </span><span class="n">event</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]})</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">"on_tool_end"</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">'type'</span><span class="p">:</span><span class="w"> </span><span class="s1">'tool_end'</span><span class="p">,</span><span class="w"> </span><span class="s1">'output'</span><span class="p">:</span><span class="w"> </span><span class="nb">str</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'output'</span><span class="p">))})</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
 </code></pre></div></li>
 </ul>
 <h3 id="3-llamaindex-rag-vector-store-target-user">③ LlamaIndex 기반 RAG Vector Store 영속화 및 Target User 검증 툴 구현</h3>

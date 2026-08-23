@@ -355,6 +355,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../yeardream_project_paragraphy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    논술 AI 학습 플랫폼 (Paragraphy)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -368,10 +395,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -389,8 +416,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2476,10 +2503,10 @@
 <p>일단 <code>__array_function__</code>에 어떤 값이 들어오는지를 알아보기로 했다.</p>
 <p>[[1, 2], [3, 4]]와 [[5, 6], [7, 8]]을 axis 1로 concatinate하는 코드를 짰고, <code>__array_function__</code>의 매개변수 (<code>func</code>, <code>types</code>, <code>args</code>, <code>kwargs</code>)를 출력해보았다.</p>
 <p>다음과 같은 결과가 나온다.</p>
-<div class="highlight"><pre><span></span><code>&lt;function concatenate at 0x000002388B5B3BE0&gt; (&lt;class &#39;__main__.Tensor&#39;&gt;, &lt;class &#39;numpy.ndarray&#39;&gt;) ([Tensor([[1, 2],
+<div class="highlight"><pre><span></span><code>&lt;function concatenate at 0x000002388B5B3BE0&gt; (&lt;class '__main__.Tensor'&gt;, &lt;class 'numpy.ndarray'&gt;) ([Tensor([[1, 2],
         [3, 4]]), array([[5, 6],
-       [7, 8]])],) {&#39;axis&#39;: 1}
-&lt;function copy at 0x000002388B7DFBE0&gt; (&lt;class &#39;__main__.Tensor&#39;&gt;,) (Tensor([[1, 2, 5, 6],
+       [7, 8]])],) {'axis': 1}
+&lt;function copy at 0x000002388B7DFBE0&gt; (&lt;class '__main__.Tensor'&gt;,) (Tensor([[1, 2, 5, 6],
         [3, 4, 7, 8]]),) {}
 </code></pre></div>
 <p>concatenate 내부에서 copy도 부른다는 부가적인 정보도 알 수 있었다.</p>
